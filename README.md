@@ -15,8 +15,8 @@ Este proyecto es un juego desarollado en c++ basado en la popular franquicia de 
 
 ### Integrantes del equipo
 
-1. **Nombre completo:** [Nombre del estudiante 1]  
-   **Carnet:** [Carnet del estudiante 1]
+1. **Nombre completo:** Jonathan Josué Molina Romero
+   **Carnet:** 00141225
 
 2. **Nombre completo:** [Nombre del estudiante 2]  
    **Carnet:** [Carnet del estudiante 2]
