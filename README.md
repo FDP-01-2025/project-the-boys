@@ -23,7 +23,7 @@ cada vez que el jugador gane se le añadira al enemigo un 0.3 de daño y vida, y
 ataques fijos invariables efectos de estado randomizacion de enemigos, críticos(10%), efectos de estado y certeza de ataques(dependiendo del ataque) debilidad y resistencia a ciertos ataques dependiendo del tipo del pokemon
 ## Equipo
 
-- **Nombre del equipo:** [Nombre del equipo]
+- **Nombre del equipo:** The boys
 
 ### Integrantes del equipo
 
