@@ -8,6 +8,29 @@
 #include <iostream>
 #include <vector>
 
+struct TempJugador {
+    double incrementoVida = 1.2;
+    double incrementoAtaque = 1.5; 
+
+    void subirStats(Pokemon& p) {
+        p.vida = static_cast<int>(p.vida * incrementoVida);
+        for (auto& atk : p.ataques) {
+            atk.danio = static_cast<int>(atk.danio * incrementoAtaque);
+        }
+    }
+};
+
+struct TempBot {
+    double incrementoVida = 1.1;
+    double incrementoAtaque = 1.3; 
+
+    void subirStats(Pokemon& p) {
+        p.vida = static_cast<int>(p.vida * incrementoVida);
+        for (auto& atk : p.ataques) {
+            atk.danio = static_cast<int>(atk.danio * incrementoAtaque);
+        }
+    }
+};
 
 int calcularDanio(const Ataque& atk, const Pokemon& defensor) {
     return std::max(1, atk.danio - defensor.defensa);
