@@ -18,8 +18,8 @@ Este proyecto es un juego desarollado en c++ basado en la popular franquicia de 
 1. **Nombre completo:** Jonathan Josué Molina Romero
    **Carnet:** 00141225
 
-2. **Nombre completo:** [Nombre del estudiante 2]  
-   **Carnet:** [Carnet del estudiante 2]
+2. **Nombre completo:** Gianfranco Xavier Miranda Hernández  
+   **Carnet:** 00059425
 
 3. **Nombre completo:** [Nombre del estudiante 3]  
    **Carnet:** [Carnet del estudiante 3]
