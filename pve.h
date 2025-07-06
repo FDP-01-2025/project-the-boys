@@ -8,6 +8,8 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 struct TempJugador {
     double incrementoVida = 1.2;
     double incrementoAtaque = 1.5; 
@@ -19,7 +21,6 @@ struct TempJugador {
         }
     }
 };
-
 struct TempBot {
     double incrementoVida = 1.1;
     double incrementoAtaque = 1.3; 
@@ -69,9 +70,16 @@ Pokemon seleccionarPokemonRandom(const vector<Pokemon>& pokemons) {
 void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemigos) {
     srand(static_cast<unsigned>(time(0)));
 
+    TempJugador tempJugador;
+    TempBot tempBot;
+
     cout << "\u00a1Empieza el torneo PvE infinito!\n";
 
-    while (!pokemonsUsuario.empty()) {
+    int ronda = 1;
+
+    for (;!pokemonsUsuario.empty(); ronda++) {
+        cout << "\n=========== Ronda #" << ronda << "=============\n";
+
         cout << "\nSelecciona un Pok\u00e9mon para la batalla:\n";
         Pokemon usuario = seleccionarPokemonUsuario(pokemonsUsuario);
         Pokemon enemigo = seleccionarPokemonRandom(pokemonsEnemigos);
@@ -137,9 +145,23 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
                 return;
             }
         }
+        
+        
+        tempJugador.subirStats(usuario);
+        cout << usuario.nombre << " ahora tiene Vida: " << usuario.vida << "\n";
+
+        for (auto& e : pokemonsEnemigos) {
+            tempBot.subirStats(e);
+        }
+
+        pokemonsUsuario.push_back(usuario);
+
+        cout << "\u00a1Prep\u00e1rate para la pr\u00f3xima ronda!\n";
+    
 
         cout << "\u00a1Prep\u00e1rate para la pr\u00f3xima batalla!\n";
     }
 }
+
 
 #endif
