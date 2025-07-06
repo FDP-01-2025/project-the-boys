@@ -158,8 +158,6 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
 
         cout << "\u00a1Prep\u00e1rate para la pr\u00f3xima ronda!\n";
     
-
-        cout << "\u00a1Prep\u00e1rate para la pr\u00f3xima batalla!\n";
     }
 }
 
