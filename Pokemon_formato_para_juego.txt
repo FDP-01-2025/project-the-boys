@@ -1,673 +1,812 @@
 Venusaur
 Tipo: Planta
 Vida: 363
-Puntos: 0
-Ataque1: Razor Leaf, 55, 25
-Ataque2: Vine Whip, 45, 25
-Ataque3: Body Slam, 85, 15
-Ataque4: Giga Drain, 60, 5
+Puntos: 100
+Defensa: 328
+Velocidad: 284
+Ataque1: Razor Leaf,55,25
+Ataque2: Vine Whip,45,25
+Ataque3: Body Slam,85,15
+Ataque4: Giga Drain,60,5
 
 Charizard
 Tipo: Fuego
 Vida: 360
-Puntos: 0
-Ataque1: Lanzallamas, 90, 15
-Ataque2: Tajo aéreo, 75, 15
-Ataque3: Arañazo, 40, 35
-Ataque4: Aire afilado, 60, 25
+Puntos: 100
+Defensa: 293
+Velocidad: 328
+Ataque1: Lanzallamas,90,15
+Ataque2: Tajo aéreo,75,15
+Ataque3: Arañazo,40,35
+Ataque4: Aire afilado,60,25
 
 Blastoise
 Tipo: Agua
 Vida: 362
-Puntos: 0
-Ataque1: Hidrobomba, 110, 5
-Ataque2: Pistola de agua, 40, 25
-Ataque3: Bite, 60, 25
-Ataque4: Placaje, 100, 35
+Puntos: 100
+Defensa: 361
+Velocidad: 280
+Ataque1: Hidrobomba,110,5
+Ataque2: Pistola de agua,40,25
+Ataque3: Bite,60,25
+Ataque4: Placaje,100,35
 
 Pidgeot
 Tipo: Volador
 Vida: 369
-Puntos: 0
-Ataque1: Wing Attack, 60, 35
-Ataque2: Quick Attack, 40, 30
-Ataque3: Tackle, 40, 35
-Ataque4: Aerial Ace, 60, 20
+Puntos: 100
+Defensa: 289
+Velocidad: 349
+Ataque1: Wing Attack,60,35
+Ataque2: Quick Attack,40,30
+Ataque3: Tackle,40,35
+Ataque4: Aerial Ace,60,20
 
 Butterfree
 Tipo: Bicho
 Vida: 323
-Puntos: 0
-Ataque1: Tornado, 45, 15
-Ataque2: String shot, 100, 30
-Ataque3: Poison powder, 30, 25
-Ataque4: Psybeam, 65, 20
+Puntos: 100
+Defensa: 250
+Velocidad: 270
+Ataque1: Tornado,45,15
+Ataque2: String shot,100,30
+Ataque3: Poison powder,30,25
+Ataque4: Psybeam,65,20
 
 Beedrill
 Tipo: Bicho
 Vida: 333
-Puntos: 0
-Ataque1: Pin missile, 45, 15
-Ataque2: String shot, 100, 30
-Ataque3: Poison sting, 30, 25
-Ataque4: Picotazo, 75, 25
+Puntos: 100
+Defensa: 190
+Velocidad: 295
+Ataque1: Pin missile,45,15
+Ataque2: String shot,100,30
+Ataque3: Poison sting,30,25
+Ataque4: Picotazo,75,25
 
 Pikachu
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 273
-Puntos: 0
-Ataque1: Thunderbolt, 90, 15
-Ataque2: Quick Attack, 40, 30
-Ataque3: Slam, 80, 20
-Ataque4: Shock Wave, 60, 20
+Puntos: 100
+Defensa: 190
+Velocidad: 320
+Ataque1: Thunderbolt,90,15
+Ataque2: Quick Attack,40,30
+Ataque3: Slam,80,20
+Ataque4: Shock Wave,60,20
 
 Nidoqueen
 Tipo: Tierra
 Vida: 343
-Puntos: 0
-Ataque1: Earthquake, 100, 10
-Ataque2: Ice Beam, 90, 10
-Ataque3: Body Slam, 85, 15
-Ataque4: Surf, 90, 15
+Puntos: 100
+Defensa: 317
+Velocidad: 269
+Ataque1: Earthquake,100,10
+Ataque2: Ice Beam,90,10
+Ataque3: Body Slam,85,15
+Ataque4: Surf,90,15
 
 Nidoking
 Tipo: Veneno
 Vida: 325
-Puntos: 0
-Ataque1: Earthquake, 100, 10
-Ataque2: Sludge Bomb, 90, 10
-Ataque3: Megahorn, 120, 10
-Ataque4: Thunderbolt, 90, 15
+Puntos: 100
+Defensa: 277
+Velocidad: 295
+Ataque1: Earthquake,100,10
+Ataque2: Sludge Bomb,90,10
+Ataque3: Megahorn,120,10
+Ataque4: Thunderbolt,90,15
 
 Fearow
 Tipo: Volador
 Vida: 333
-Puntos: 0
-Ataque1: Ataque furia, 35, 10
-Ataque2: Ataque ala, 100, 35
-Ataque3: Pico taladro, 80, 25
-Ataque4: Derribo, 90, 30
+Puntos: 100
+Defensa: 240
+Velocidad: 340
+Ataque1: Ataque furia,35,10
+Ataque2: Ataque ala,100,35
+Ataque3: Pico taladro,80,25
+Ataque4: Derribo,90,30
 
 Sandslash
 Tipo: Tierra
 Vida: 353
-Puntos: 0
-Ataque1: Terremoto, 120, 45
-Ataque2: Excavar, 80, 30
-Ataque3: Danza espada, —, 20
-Ataque4: Arañazo, 40, 10
+Puntos: 100
+Defensa: 350
+Velocidad: 260
+Ataque1: Terremoto,120,45
+Ataque2: Excavar,80,30
+Ataque3: Danza espada,0,20
+Ataque4: Arañazo,40,10
 
 Parasect
 Tipo: Bicho
 Vida: 323
-Puntos: 0
-Ataque1: Slash, 70, 20
-Ataque2: X-Scissor, 80, 15
-Ataque3: Seed Bomb, 80, 15
-Ataque4: Scratch, 40, 35
+Puntos: 100
+Defensa: 280
+Velocidad: 210
+Ataque1: Slash,70,20
+Ataque2: X-Scissor,80,15
+Ataque3: Seed Bomb,80,15
+Ataque4: Scratch,40,35
 
 Arcanine
 Tipo: Fuego
 Vida: 383
-Puntos: 0
-Ataque1: Flamethrower, 90, 15
-Ataque2: Extreme Speed, 80, 5
-Ataque3: Bite, 60, 25
+Puntos: 100
+Defensa: 300
+Velocidad: 330
+Ataque1: Flamethrower,90,15
+Ataque2: Extreme Speed,80,5
+Ataque3: Bite,60,25
 
 Alakazam
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 313
-Puntos: 0
-Ataque1: Psychic, 90, 10
-Ataque2: Psybeam, 65, 20
-Ataque3: Confusion, 50, 25
-Ataque4: Signal Beam, 75, 15
+Puntos: 100
+Defensa: 210
+Velocidad: 370
+Ataque1: Psychic,90,10
+Ataque2: Psybeam,65,20
+Ataque3: Confusion,50,25
+Ataque4: Signal Beam,75,15
 
 Machamp
 Tipo: Lucha
 Vida: 383
-Puntos: 0
-Ataque1: Cross Chop, 100, 5
-Ataque2: Karate Chop, 50, 25
-Ataque3: Brick Break, 75, 15
-Ataque4: Vital Throw, 70, 10
+Puntos: 100
+Defensa: 310
+Velocidad: 230
+Ataque1: Cross Chop,100,5
+Ataque2: Karate Chop,50,25
+Ataque3: Brick Break,75,15
+Ataque4: Vital Throw,70,10
 
 Clefable
 Tipo: Hada
 Vida: 393
-Puntos: 0
-Ataque1: Moonblast, 95, 15
-Ataque2: Meteor Mash, 90, 10
-Ataque3: Thunder Wave, 110, 20
-Ataque4: Soft-Boiled, 90, 10
-
-Ninetales
-Tipo: Fuego
-Vida: 349
-Puntos: 0
-Ataque1: Flamethrower, 90, 15
-Ataque2: Fire Blast, 110, 5
-Ataque3: Will-O-Wisp, 90, 15
-Ataque4: Energy Ball, 90, 10
+Puntos: 100
+Defensa: 290
+Velocidad: 240
+Ataque1: Moonblast,95,15
+Ataque2: Meteor Mash,90,10
+Ataque3: Thunder Wave,110,20
+Ataque4: Soft-Boiled,90,10
 
 Wigglytuff
 Tipo: Hada
 Vida: 483
-Puntos: 0
-Ataque1: Hyper Voice, 90, 10
-Ataque2: Play Rough, 90, 10
-Ataque3: Thunderbolt, 90, 15
-Ataque4: Sing, 40, 15
+Puntos: 100
+Defensa: 250
+Velocidad: 220
+Ataque1: Hyper Voice,90,10
+Ataque2: Play Rough,90,10
+Ataque3: Thunderbolt,90,15
+Ataque4: Sing,40,15
 
 Golbat
 Tipo: Veneno
 Vida: 353
-Puntos: 0
-Ataque1: Poison Fang, 50, 15
-Ataque2: Wing Attack, 60, 35
-Ataque3: Leech Life, 80, 10
-Ataque4: Confuse Ray, 80, 10
+Puntos: 100
+Defensa: 270
+Velocidad: 310
+Ataque1: Poison Fang,50,15
+Ataque2: Wing Attack,60,35
+Ataque3: Leech Life,80,10
+Ataque4: Confuse Ray,80,10
 
 Vileplume
 Tipo: Planta
 Vida: 353
-Puntos: 0
-Ataque1: Petal Dance, 120, 30
-Ataque2: Sludge Bomb, 90, 10
-Ataque3: Solar Beam, 120, 30
-Ataque4: Sleep Powder, 100, 15
+Puntos: 100
+Defensa: 320
+Velocidad: 240
+Ataque1: Petal Dance,120,30
+Ataque2: Sludge Bomb,90,10
+Ataque3: Solar Beam,120,30
+Ataque4: Sleep Powder,100,15
 
 Golem
 Tipo: Roca
 Vida: 363
-Puntos: 0
-Ataque1: Earthquake, 100, 10
-Ataque2: Rock Slide, 75, 10
-Ataque3: Tackle, 35, 35
-Ataque4: Double-Edge, 120, 15
+Puntos: 100
+Defensa: 400
+Velocidad: 200
+Ataque1: Earthquake,100,10
+Ataque2: Rock Slide,75,10
+Ataque3: Tackle,35,35
+Ataque4: Double-Edge,120,15
 
 Rapidash
 Tipo: Fuego
 Vida: 333
-Puntos: 0
-Ataque1: Flamethrower, 90, 15
-Ataque2: Stomp, 65, 20
-Ataque3: Fire Spin, 35, 15
-Ataque4: Horn Attack, 65, 25
+Puntos: 100
+Defensa: 250
+Velocidad: 350
+Ataque1: Flamethrower,90,15
+Ataque2: Stomp,65,20
+Ataque3: Fire Spin,35,15
+Ataque4: Horn Attack,65,25
 
 Slowbro
 Tipo: Agua
 Vida: 393
-Puntos: 0
-Ataque1: Psychic, 90, 10
-Ataque2: Surf, 90, 15
-Ataque3: Ice Beam, 90, 10
-Ataque4: Body Slam, 85, 15
+Puntos: 100
+Defensa: 350
+Velocidad: 180
+Ataque1: Psychic,90,10
+Ataque2: Surf,90,15
+Ataque3: Ice Beam,90,10
+Ataque4: Body Slam,85,15
 
 Cloyster
 Tipo: Hielo
 Vida: 303
-Puntos: 0
-Ataque1: Ice Shard, 40, 30
-Ataque2: Icicle Spear, 50, 10
-Ataque3: Water Pulse, 60, 20
-Ataque4: Rock Blast, 50, 10
+Puntos: 100
+Defensa: 450
+Velocidad: 210
+Ataque1: Ice Shard,40,30
+Ataque2: Icicle Spear,50,10
+Ataque3: Water Pulse,60,20
+Ataque4: Rock Blast,50,10
 
 Gengar
 Tipo: Fantasma
 Vida: 323
-Puntos: 0
-Ataque1: Shadow Ball, 80, 15
-Ataque2: Lick, 20, 30
-Ataque3: Dark Pulse, 80, 15
-Ataque4: Psychic, 90, 10
+Puntos: 100
+Defensa: 220
+Velocidad: 350
+Ataque1: Shadow Ball,80,15
+Ataque2: Lick,20,30
+Ataque3: Dark Pulse,80,15
+Ataque4: Psychic,90,10
 
 Kingler
 Tipo: Agua
 Vida: 313
-Puntos: 0
-Ataque1: Crabhammer, 90, 10
-Ataque2: Vice Grip, 55, 30
-Ataque3: Slash, 70, 20
-Ataque4: Stomp, 65, 20
+Puntos: 100
+Defensa: 320
+Velocidad: 240
+Ataque1: Crabhammer,90,10
+Ataque2: Vice Grip,55,30
+Ataque3: Slash,70,20
+Ataque4: Stomp,65,20
 
 Dugtrio
 Tipo: Tierra
 Vida: 273
-Puntos: 0
-Ataque1: Earthquake, 100, 10
-Ataque2: Rock Slide, 75, 10
-Ataque3: Sucker Punch, 70, 5
-Ataque4: Sand Attack, 110, 15
+Puntos: 100
+Defensa: 180
+Velocidad: 360
+Ataque1: Earthquake,100,10
+Ataque2: Rock Slide,75,10
+Ataque3: Sucker Punch,70,5
+Ataque4: Sand Attack,110,15
 
 Venomoth
 Tipo: Bicho
 Vida: 343
-Puntos: 0
-Ataque1: Bug Buzz, 90, 10
-Ataque2: Psychic, 90, 10
-Ataque3: Sleep Powder, 100, 15
-Ataque4: Quiver Dance, 140, 25
+Puntos: 100
+Defensa: 250
+Velocidad: 310
+Ataque1: Bug Buzz,90,10
+Ataque2: Psychic,90,10
+Ataque3: Sleep Powder,100,15
+Ataque4: Quiver Dance,140,25
 
 Persian
 Tipo: Normal
 Vida: 333
-Puntos: 0
-Ataque1: Slash, 70, 20
-Ataque2: Power Gem, 80, 20
-Ataque3: Fake Out, 40, 10
-Ataque4: Taunt, 90, 20
+Puntos: 100
+Defensa: 240
+Velocidad: 370
+Ataque1: Slash,70,20
+Ataque2: Power Gem,80,20
+Ataque3: Fake Out,40,10
+Ataque4: Taunt,90,20
 
 Golduck
 Tipo: Agua
 Vida: 363
-Puntos: 0
-Ataque1: Hydro Pump, 110, 5
-Ataque2: Psychic, 90, 10
-Ataque3: Ice Beam, 90, 10
-Ataque4: Confuse Ray, 80, 10
+Puntos: 100
+Defensa: 280
+Velocidad: 290
+Ataque1: Hydro Pump,110,5
+Ataque2: Psychic,90,10
+Ataque3: Ice Beam,90,10
+Ataque4: Confuse Ray,80,10
 
 Primeape
 Tipo: Lucha
 Vida: 333
-Puntos: 0
-Ataque1: Close Combat, 120, 5
-Ataque2: Earthquake, 100, 10
-Ataque3: Rock Slide, 75, 10
-Ataque4: U-turn, 70, 20
+Puntos: 100
+Defensa: 240
+Velocidad: 340
+Ataque1: Close Combat,120,5
+Ataque2: Earthquake,100,10
+Ataque3: Rock Slide,75,10
+Ataque4: U-turn,70,20
 
 Electrode
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 323
-Puntos: 0
-Ataque1: Thunderbolt, 90, 15
-Ataque2: Explosion, 250, 5
-Ataque3: Swift, 60, 20
-Ataque4: Tackle, 40, 35
+Puntos: 100
+Defensa: 240
+Velocidad: 390
+Ataque1: Thunderbolt,90,15
+Ataque2: Explosion,250,5
+Ataque3: Swift,60,20
+Ataque4: Tackle,40,35
 
 Exeggutor
 Tipo: Planta
 Vida: 393
-Puntos: 0
-Ataque1: Psychic, 90, 10
-Ataque2: Seed Bomb, 80, 15
-Ataque3: Body Slam, 85, 15
-Ataque4: Stomp, 65, 20
+Puntos: 100
+Defensa: 300
+Velocidad: 220
+Ataque1: Psychic,90,10
+Ataque2: Seed Bomb,80,15
+Ataque3: Body Slam,85,15
+Ataque4: Stomp,65,20
 
 Hitmonlee
 Tipo: Lucha
 Vida: 303
-Puntos: 0
-Ataque1: High Jump Kick, 130, 10
-Ataque2: Brick Break, 75, 15
-Ataque3: Rolling Kick, 60, 15
-Ataque4: Double Kick, 60, 30
+Puntos: 100
+Defensa: 240
+Velocidad: 320
+Ataque1: High Jump Kick,130,10
+Ataque2: Brick Break,75,15
+Ataque3: Rolling Kick,60,15
+Ataque4: Double Kick,60,30
 
 Hitmonchan
 Tipo: Lucha
 Vida: 303
-Puntos: 0
-Ataque1: Fire Punch, 75, 15
-Ataque2: Ice Punch, 75, 15
-Ataque3: Thunder Punch, 75, 15
-Ataque4: Mach Punch, 40, 30
+Puntos: 100
+Defensa: 280
+Velocidad: 276
+Ataque1: Fire Punch,75,15
+Ataque2: Ice Punch,75,15
+Ataque3: Thunder Punch,75,15
+Ataque4: Mach Punch,40,30
 
 Rhydon
 Tipo: Tierra
 Vida: 413
-Puntos: 0
-Ataque1: Earthquake, 100, 10
-Ataque2: Rock Slide, 75, 10
-Ataque3: Horn Attack, 65, 25
-Ataque4: Double-Edge, 120, 15
+Puntos: 100
+Defensa: 380
+Velocidad: 190
+Ataque1: Earthquake,100,10
+Ataque2: Rock Slide,75,10
+Ataque3: Horn Attack,65,25
+Ataque4: Double-Edge,120,15
 
 Poliwrath
 Tipo: Agua
 Vida: 383
-Puntos: 0
-Ataque1: Dynamic Punch, 100, 5
-Ataque2: Waterfall, 80, 15
-Ataque3: Ice Punch, 75, 15
-Ataque4: Bulk Up, 100, 20
+Puntos: 100
+Defensa: 330
+Velocidad: 260
+Ataque1: Dynamic Punch,100,5
+Ataque2: Waterfall,80,15
+Ataque3: Ice Punch,75,15
+Ataque4: Bulk Up,100,20
 
 Kangaskhan
 Tipo: Normal
 Vida: 413
-Puntos: 0
-Ataque1: Dizzy Punch, 70, 10
-Ataque2: Crunch, 80, 15
-Ataque3: Stomp, 65, 20
-Ataque4: Brick Break, 75, 15
+Puntos: 100
+Defensa: 300
+Velocidad: 280
+Ataque1: Dizzy Punch,70,10
+Ataque2: Crunch,80,15
+Ataque3: Stomp,65,20
+Ataque4: Brick Break,75,15
 
 Starmie
 Tipo: Agua
 Vida: 323
-Puntos: 0
-Ataque1: Psychic, 90, 10
-Ataque2: Surf, 90, 15
-Ataque3: Thunderbolt, 90, 15
-Ataque4: Rapid Spin, 50, 40
+Puntos: 100
+Defensa: 280
+Velocidad: 360
+Ataque1: Psychic,90,10
+Ataque2: Surf,90,15
+Ataque3: Thunderbolt,90,15
+Ataque4: Rapid Spin,50,40
 
 Scyther
 Tipo: Bicho
 Vida: 343
-Puntos: 0
-Ataque1: Wing Attack, 60, 35
-Ataque2: Slash, 70, 20
-Ataque3: X-Scissor, 80, 15
-Ataque4: Fury Cutter, 40, 20
+Puntos: 100
+Defensa: 280
+Velocidad: 350
+Ataque1: Wing Attack,60,35
+Ataque2: Slash,70,20
+Ataque3: X-Scissor,80,15
+Ataque4: Fury Cutter,40,20
 
 Victreebel
 Tipo: Planta
 Vida: 363
-Puntos: 0
-Ataque1: Leaf Blade, 90, 15
-Ataque2: Sludge Bomb, 90, 10
-Ataque3: Solar Beam, 120, 10
-Ataque4: Sleep Powder, 100, 15
+Puntos: 100
+Defensa: 260
+Velocidad: 240
+Ataque1: Leaf Blade,90,15
+Ataque2: Sludge Bomb,90,10
+Ataque3: Solar Beam,120,10
+Ataque4: Sleep Powder,100,15
 
 Tentacruel
 Tipo: Agua
 Vida: 363
-Puntos: 0
-Ataque1: Surf, 90, 15
-Ataque2: Sludge Wave, 95, 10
-Ataque3: Barrier, 100, 20
-Ataque4: Poison Jab, 80, 20
+Puntos: 100
+Defensa: 300
+Velocidad: 280
+Ataque1: Surf,90,15
+Ataque2: Sludge Wave,95,10
+Ataque3: Barrier,100,20
+Ataque4: Poison Jab,80,20
 
 Electabuzz
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 333
-Puntos: 0
-Ataque1: Thunderbolt, 90, 15
-Ataque2: Thunder Punch, 75, 15
-Ataque3: Swift, 60, 20
-Ataque4: Low Kick, 60, 25
+Puntos: 100
+Defensa: 240
+Velocidad: 330
+Ataque1: Thunderbolt,90,15
+Ataque2: Thunder Punch,75,15
+Ataque3: Swift,60,20
+Ataque4: Low Kick,60,25
 
 Magmar
 Tipo: Fuego
 Vida: 333
-Puntos: 0
-Ataque1: Flamethrower, 90, 15
-Ataque2: Fire Punch, 75, 15
-Ataque3: Ember, 40, 25
-Ataque4: Brick Break, 75, 15
+Puntos: 100
+Defensa: 250
+Velocidad: 320
+Ataque1: Flamethrower,90,15
+Ataque2: Fire Punch,75,15
+Ataque3: Ember,40,25
+Ataque4: Brick Break,75,15
 
 Pinsir
 Tipo: Bicho
 Vida: 333
-Puntos: 0
-Ataque1: X-Scissor, 80, 15
-Ataque2: Vice Grip, 55, 30
-Ataque3: Seismic Toss, 60, 20
-Ataque4: Rock Slide, 75, 10
+Puntos: 100
+Defensa: 300
+Velocidad: 280
+Ataque1: X-Scissor,80,15
+Ataque2: Vice Grip,55,30
+Ataque3: Seismic Toss,60,20
+Ataque4: Rock Slide,75,10
 
 Tauros
 Tipo: Normal
 Vida: 353
-Puntos: 0
-Ataque1: Body Slam, 85, 15
-Ataque2: Hyper Beam, 150, 5
-Ataque3: Earthquake, 100, 10
-Ataque4: Horn Attack, 65, 25
+Puntos: 100
+Defensa: 280
+Velocidad: 350
+Ataque1: Body Slam,85,15
+Ataque2: Hyper Beam,150,5
+Ataque3: Earthquake,100,10
+Ataque4: Horn Attack,65,25
 
 Gyarados
 Tipo: Agua
 Vida: 393
-Puntos: 0
-Ataque1: Waterfall, 80, 15
-Ataque2: Bite, 60, 25
-Ataque3: Crunch, 80, 15
-Ataque4: Earthquake, 100, 10
+Puntos: 100
+Defensa: 300
+Velocidad: 290
+Ataque1: Waterfall,80,15
+Ataque2: Bite,60,25
+Ataque3: Crunch,80,15
+Ataque4: Earthquake,100,10
 
 Magneton
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 303
-Puntos: 0
-Ataque1: Thunderbolt, 90, 15
-Ataque2: Flash Cannon, 80, 10
-Ataque3: Tri Attack, 80, 10
-Ataque4: Thunder Wave, 100, 20
+Puntos: 100
+Defensa: 280
+Velocidad: 240
+Ataque1: Thunderbolt,90,15
+Ataque2: Flash Cannon,80,10
+Ataque3: Tri Attack,80,10
+Ataque4: Thunder Wave,100,20
 
 Dodrio
 Tipo: Volador
 Vida: 323
-Puntos: 0
-Ataque1: Drill Peck, 80, 20
-Ataque2: Jump Kick, 100, 10
-Ataque3: Body Slam, 85, 15
-Ataque4: Roost, 10, 10
+Puntos: 100
+Defensa: 260
+Velocidad: 360
+Ataque1: Drill Peck,80,20
+Ataque2: Jump Kick,100,10
+Ataque3: Body Slam,85,15
+Ataque4: Roost,10,10
 
 Lapras
 Tipo: Agua
 Vida: 463
-Puntos: 0
-Ataque1: Ice Beam, 90, 10
-Ataque2: Surf, 90, 15
-Ataque3: Body Slam, 85, 15
-Ataque4: Water Gun, 40, 25
+Puntos: 100
+Defensa: 320
+Velocidad: 220
+Ataque1: Ice Beam,90,10
+Ataque2: Surf,90,15
+Ataque3: Body Slam,85,15
+Ataque4: Water Gun,40,25
 
 Farfetch'd
 Tipo: Volador
 Vida: 307
-Puntos: 0
-Ataque1: Brave Bird, 120, 15
-Ataque2: Leaf Blade, 90, 15
-Ataque3: Knock Off, 65, 20
-Ataque4: Swords Dance, 120, 20
+Puntos: 100
+Defensa: 220
+Velocidad: 260
+Ataque1: Brave Bird,120,15
+Ataque2: Leaf Blade,90,15
+Ataque3: Knock Off,65,20
+Ataque4: Swords Dance,120,20
 
 Ditto
 Tipo: Normal
 Vida: 299
-Puntos: 0
-Ataque1: Pound, 40, 35
-Ataque2: Tackle, 40, 35
-Ataque3: Scratch, 40, 35
-Ataque4: Pound, 40, 35
+Puntos: 100
+Defensa: 200
+Velocidad: 200
+Ataque1: Pound,40,35
+Ataque2: Tackle,40,35
+Ataque3: Scratch,40,35
+Ataque4: Pound,40,35
 
 Dewgong
 Tipo: Hielo
 Vida: 383
-Puntos: 0
-Ataque1: Ice Beam, 90, 10
-Ataque2: Surf, 90, 15
-Ataque3: Rest, 90, 10
-Ataque4: Sheer Cold, 50, 5
+Puntos: 100
+Defensa: 320
+Velocidad: 240
+Ataque1: Ice Beam,90,10
+Ataque2: Surf,90,15
+Ataque3: Rest,90,10
+Ataque4: Sheer Cold,50,5
 
 Vaporeon
 Tipo: Agua
 Vida: 463
-Puntos: 0
-Ataque1: Surf, 90, 15
-Ataque2: Ice Beam, 90, 10
-Ataque3: Aurora Beam, 65, 20
-Ataque4: Bite, 60, 25
+Puntos: 100
+Defensa: 300
+Velocidad: 260
+Ataque1: Surf,90,15
+Ataque2: Ice Beam,90,10
+Ataque3: Aurora Beam,65,20
+Ataque4: Bite,60,25
 
 Jolteon
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 333
-Puntos: 0
-Ataque1: Thunderbolt, 90, 15
-Ataque2: Double Kick, 120, 30
-Ataque3: Swift, 60, 20
-Ataque4: Shock Wave, 60, 20
+Puntos: 100
+Defensa: 240
+Velocidad: 390
+Ataque1: Thunderbolt,90,15
+Ataque2: Double Kick,120,30
+Ataque3: Swift,60,20
+Ataque4: Shock Wave,60,20
 
 Flareon
 Tipo: Fuego
 Vida: 333
-Puntos: 0
-Ataque1: Flamethrower, 90, 15
-Ataque2: Bite, 60, 25
-Ataque3: Ember, 40, 25
-Ataque4: Strength, 80, 15
+Puntos: 100
+Defensa: 280
+Velocidad: 240
+Ataque1: Flamethrower,90,15
+Ataque2: Bite,60,25
+Ataque3: Ember,40,25
+Ataque4: Strength,80,15
 
 Omastar
 Tipo: Agua
 Vida: 343
-Puntos: 0
-Ataque1: Ancient Power, 60, 5
-Ataque2: Surf, 90, 15
-Ataque3: Ice Beam, 90, 10
-Ataque4: Earth Power, 90, 10
+Puntos: 100
+Defensa: 350
+Velocidad: 200
+Ataque1: Ancient Power,60,5
+Ataque2: Surf,90,15
+Ataque3: Ice Beam,90,10
+Ataque4: Earth Power,90,10
 
 Hypno
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 373
-Puntos: 0
-Ataque1: Psychic, 90, 10
-Ataque2: Shadow Ball, 80, 15
-Ataque3: Hypnosis, 120, 20
-Ataque4: Dream Eater, 100, 15
+Puntos: 100
+Defensa: 290
+Velocidad: 220
+Ataque1: Psychic,90,10
+Ataque2: Shadow Ball,80,15
+Ataque3: Hypnosis,120,20
+Ataque4: Dream Eater,100,15
 
 Onix
 Tipo: Roca
 Vida: 273
-Puntos: 0
-Ataque1: Earthquake, 100, 10
-Ataque2: Rock Slide, 75, 10
-Ataque3: Iron Tail, 100, 15
-Ataque4: Sandstorm, 100, 10
+Puntos: 100
+Defensa: 400
+Velocidad: 180
+Ataque1: Earthquake,100,10
+Ataque2: Rock Slide,75,10
+Ataque3: Iron Tail,100,15
+Ataque4: Sandstorm,100,10
 
 Kabutops
 Tipo: Roca
 Vida: 323
-Puntos: 0
-Ataque1: Rock Slide, 75, 10
-Ataque2: Slash, 70, 20
-Ataque3: Waterfall, 80, 15
-Ataque4: Aqua Jet, 40, 20
+Puntos: 100
+Defensa: 300
+Velocidad: 260
+Ataque1: Rock Slide,75,10
+Ataque2: Slash,70,20
+Ataque3: Waterfall,80,15
+Ataque4: Aqua Jet,40,20
 
 Aerodactyl
 Tipo: Volador
 Vida: 363
-Puntos: 0
-Ataque1: Rock Slide, 75, 10
-Ataque2: Wing Attack, 60, 35
-Ataque3: Hyper Beam, 150, 5
-Ataque4: Bite, 60, 25
+Puntos: 100
+Defensa: 250
+Velocidad: 390
+Ataque1: Rock Slide,75,10
+Ataque2: Wing Attack,60,35
+Ataque3: Hyper Beam,150,5
+Ataque4: Bite,60,25
 
 Snorlax
 Tipo: Normal
 Vida: 523
-Puntos: 0
-Ataque1: Body Slam, 85, 15
-Ataque2: Hyper Beam, 150, 5
-Ataque3: Earthquake, 100, 10
-Ataque4: Headbutt, 70, 15
+Puntos: 100
+Defensa: 320
+Velocidad: 180
+Ataque1: Body Slam,85,15
+Ataque2: Hyper Beam,150,5
+Ataque3: Earthquake,100,10
+Ataque4: Headbutt,70,15
 
 Articuno
 Tipo: Hielo
 Vida: 383
-Puntos: 0
-Ataque1: Ice Beam, 90, 10
-Ataque2: Hurricane, 110, 10
-Ataque3: Drill Peck, 80, 20
-Ataque4: Quick Attack, 40, 30
+Puntos: 100
+Defensa: 330
+Velocidad: 290
+Ataque1: Ice Beam,90,10
+Ataque2: Hurricane,110,10
+Ataque3: Drill Peck,80,20
+Ataque4: Quick Attack,40,30
 
 Zapdos
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 383
-Puntos: 0
-Ataque1: Thunderbolt, 90, 15
-Ataque2: Drill Peck, 80, 20
-Ataque3: Quick Attack, 40, 30
-Ataque4: Heat Wave, 95, 10
+Puntos: 100
+Defensa: 300
+Velocidad: 330
+Ataque1: Thunderbolt,90,15
+Ataque2: Drill Peck,80,20
+Ataque3: Quick Attack,40,30
+Ataque4: Heat Wave,95,10
 
 Moltres
 Tipo: Fuego
 Vida: 383
-Puntos: 0
-Ataque1: Flamethrower, 90, 15
-Ataque2: Sky Attack, 140, 5
-Ataque3: Heat Wave, 95, 10
-Ataque4: Wing Attack, 60, 35
+Puntos: 100
+Defensa: 300
+Velocidad: 310
+Ataque1: Flamethrower,90,15
+Ataque2: Sky Attack,140,5
+Ataque3: Heat Wave,95,10
+Ataque4: Wing Attack,60,35
 
 Marowak
 Tipo: Tierra
 Vida: 323
-Puntos: 0
-Ataque1: Bonemerang, 50, 10
-Ataque2: Fire Punch, 75, 15
-Ataque3: Thunder Punch, 75, 15
-Ataque4: Swords Dance, 120, 20
+Puntos: 100
+Defensa: 350
+Velocidad: 200
+Ataque1: Bonemerang,50,10
+Ataque2: Fire Punch,75,15
+Ataque3: Thunder Punch,75,15
+Ataque4: Swords Dance,120,20
 
 Dragonite
 Tipo: Volador
 Vida: 385
-Puntos: 0
-Ataque1: Dragon Claw, 80, 15
-Ataque2: Wing Attack, 60, 35
-Ataque3: Thunder Punch, 75, 15
-Ataque4: Ice Punch, 75, 15
+Puntos: 100
+Defensa: 300
+Velocidad: 284
+Ataque1: Dragon Claw,80,15
+Ataque2: Wing Attack,60,35
+Ataque3: Thunder Punch,75,15
+Ataque4: Ice Punch,75,15
 
 Weezing
 Tipo: Veneno
 Vida: 333
-Puntos: 0
-Ataque1: Sludge Bomb, 120, 30
-Ataque2: Flamethrower, 65, 10
-Ataque3: Thunderbolt, 50, 5
-Ataque4: Toxic, 90, 20
+Puntos: 100
+Defensa: 340
+Velocidad: 220
+Ataque1: Sludge Bomb,120,30
+Ataque2: Flamethrower,65,10
+Ataque3: Thunderbolt,50,5
+Ataque4: Toxic,90,20
 
 Seadra
 Tipo: Agua
 Vida: 313
-Puntos: 0
-Ataque1: Hydro Pump, 110, 30
-Ataque2: Dragon Pulse, 85, 15
-Ataque3: Ice Beam, 90, 20
-Ataque4: Agility, 40, 5
+Puntos: 100
+Defensa: 280
+Velocidad: 260
+Ataque1: Hydro Pump,110,30
+Ataque2: Dragon Pulse,85,15
+Ataque3: Ice Beam,90,20
+Ataque4: Agility,40,5
 
 Seaking
 Tipo: Agua
 Vida: 363
-Puntos: 0
-Ataque1: Waterfall, 80, 15
-Ataque2: Megahorn, 120, 10
-Ataque3: Poison Jab, 80, 20
-Ataque4: Drill Run, 80, 10
+Puntos: 100
+Defensa: 280
+Velocidad: 240
+Ataque1: Waterfall,80,15
+Ataque2: Megahorn,120,10
+Ataque3: Poison Jab,80,20
+Ataque4: Drill Run,80,10
 
 Mr. Mime
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 283
-Puntos: 0
-Ataque1: Psychic, 90, 20
-Ataque2: Dazzling Gleam, 80, 10
-Ataque3: Thunder Wave, 85, 20
-Ataque4: Light Screen, 120, 30
+Puntos: 100
+Defensa: 260
+Velocidad: 280
+Ataque1: Psychic,90,20
+Ataque2: Dazzling Gleam,80,10
+Ataque3: Thunder Wave,85,20
+Ataque4: Light Screen,120,30
 
 Jynx
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 333
-Puntos: 0
-Ataque1: Ice Beam, 90, 20
-Ataque2: Psychic, 70, 10
-Ataque3: Lovely Kiss, 80, 10
-Ataque4: Focus Blast, 120, 40
+Puntos: 100
+Defensa: 220
+Velocidad: 330
+Ataque1: Ice Beam,90,20
+Ataque2: Psychic,70,10
+Ataque3: Lovely Kiss,80,10
+Ataque4: Focus Blast,120,40
 
 Porygon
 Tipo: Normal
 Vida: 333
-Puntos: 0
-Ataque1: Tri Attack, 80, 10
-Ataque2: Thunderbolt, 90, 15
-Ataque3: Ice Beam, 90, 10
-Ataque4: slam, 90, 10
+Puntos: 100
+Defensa: 280
+Velocidad: 220
+Ataque1: Tri Attack,80,10
+Ataque2: Thunderbolt,90,15
+Ataque3: Ice Beam,90,10
+Ataque4: slam,90,10
 
 Mewtwo
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 415
-Puntos: 0
-Ataque1: Psychic, 90, 10
-Ataque2: Shadow Ball, 80, 15
-Ataque3: Aura Sphere, 80, 20
-Ataque4: Thunderbolt, 90, 15
+Puntos: 100
+Defensa: 300
+Velocidad: 394
+Ataque1: Psychic,90,10
+Ataque2: Shadow Ball,80,15
+Ataque3: Aura Sphere,80,20
+Ataque4: Thunderbolt,90,15
 
 Mew
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 403
-Puntos: 0
-Ataque1: Psychic, 90, 10
-Ataque2: Shadow Ball, 80, 15
-Ataque3: Flamethrower, 90, 15
-Ataque4: Hyper Beam, 150, 5
+Puntos: 100
+Defensa: 300
+Velocidad: 320
+Ataque1: Psychic,90,10
+Ataque2: Shadow Ball,80,15
+Ataque3: Flamethrower,90,15
+Ataque4: Hyper Beam,150,5

@@ -2,11 +2,11 @@
 #define PVE_H
 
 #include "pokemon_common.h"
+#include <iostream>
+#include <vector>
 #include <cstdlib>
 #include <ctime>
 #include <limits>
-#include <iostream>
-#include <vector>
 
 using namespace std;
 
@@ -33,17 +33,13 @@ struct TempBot {
     }
 };
 
-int calcularDanio(const Ataque& atk, const Pokemon& defensor) {
-    return std::max(1, atk.danio - defensor.Defensa);
-}
-
 Pokemon seleccionarPokemonUsuario(vector<Pokemon>& pokemons) {
     cout << "\nSelecciona tu Pokemon:\n";
-for (size_t i = 0; i < pokemons.size(); ++i) {
-    cout << i + 1 << ". " << pokemons[i].Nombre << " "
-         << colorTipo(pokemons[i].Tipo)
-         << " (Vida: " << pokemons[i].Vida << ")" << endl;
-}
+    for (size_t i = 0; i < pokemons.size(); ++i) {
+        cout << i + 1 << ". " << pokemons[i].Nombre << " "
+             << colorTipo(pokemons[i].Tipo)
+             << " (Vida: " << pokemons[i].Vida << ")" << endl;
+    }
     int eleccion;
     do {
         cout << "Opcion: ";
@@ -62,7 +58,6 @@ for (size_t i = 0; i < pokemons.size(); ++i) {
     return elegido;
 }
 
-
 Pokemon seleccionarPokemonRandom(const vector<Pokemon>& pokemons) {
     if (pokemons.empty()) return Pokemon{};
     int idx = rand() % pokemons.size();
@@ -75,18 +70,18 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
     TempJugador tempJugador;
     TempBot tempBot;
 
-    cout << "\u00a1Empieza el torneo PvE infinito!\n";
+    cout << "!Empieza el torneo PvE infinito!\n";
 
     int ronda = 1;
 
     for (;!pokemonsUsuario.empty(); ronda++) {
         cout << "\n=========== Ronda #" << ronda << "=============\n";
 
-        cout << "\nSelecciona un Pok\u00e9mon para la batalla:\n";
+        cout << "\nSelecciona un Pokemon para la batalla:\n";
         Pokemon usuario = seleccionarPokemonUsuario(pokemonsUsuario);
         Pokemon enemigo = seleccionarPokemonRandom(pokemonsEnemigos);
 
-        cout << "Tu Pok\u00e9mon: " << usuario.Nombre << " vs Enemigo: " << enemigo.Nombre << " " << colorTipo(enemigo.Tipo) << "\n";
+        cout << "Tu Pokemon: " << usuario.Nombre << " vs Enemigo: " << enemigo.Nombre << " " << colorTipo(enemigo.Tipo) << "\n";
 
         usuario.vivo = true;
         enemigo.vivo = true;
@@ -107,15 +102,15 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
                 break;
             }
 
-            bool turnoUsuario = usuario.Velocidad >= enemigo.Velocidad;
+            bool usuarioEsPrimero = usuario.Velocidad >= enemigo.Velocidad;
 
-            if (turnoUsuario) {
-                cout << "\nTu Pok\u00e9mon: " << usuario.Nombre << " (Vida: " << usuario.Vida << ")\n";
+            if (usuarioEsPrimero) {
+                cout << "\nTu Pokemon: " << usuario.Nombre << " (Vida: " << usuario.Vida << ")\n";
                 cout << "Enemigo: " << enemigo.Nombre << " (Vida: " << enemigo.Vida << ")\n";
 
                 cout << "Ataques:\n";
                 for (int i = 0; i < 4; ++i) {
-                    cout << i + 1 << ". " << usuario.Ataques[i].nombre << " (Da\u00f1o: " << usuario.Ataques[i].danio
+                    cout << i + 1 << ". " << usuario.Ataques[i].nombre << " (Dano: " << usuario.Ataques[i].danio
                          << ", PP: " << usuario.Ataques[i].pp << ")\n";
                 }
                 int ataqueUsuario;
@@ -124,13 +119,21 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
                     cin >> ataqueUsuario;
                 } while (ataqueUsuario < 1 || ataqueUsuario > 4 || usuario.Ataques[ataqueUsuario - 1].pp <= 0);
 
-                int danio = calcularDanio(usuario.Ataques[ataqueUsuario - 1], enemigo);
+                int danio = calcularDanioBase(usuario.Ataques[ataqueUsuario - 1].danio, enemigo.Defensa);
+                danio = static_cast<int>(danio * obtenerMultiplicador(usuario.Tipo, enemigo.Tipo));
+                if (danio < 1) danio = 1;
+
+                float multTipo = obtenerMultiplicador(usuario.Tipo, enemigo.Tipo);
+                if (multTipo > 1.0f) cout << "¡Es super efectivo!\n";
+                else if (multTipo < 1.0f && multTipo > 0.0f) cout << "No es muy efectivo...\n";
+                else if (multTipo == 0.0f) cout << "¡No afecta al rival!\n";
+
                 enemigo.Vida -= danio;
                 usuario.Ataques[ataqueUsuario - 1].pp--;
-                cout << usuario.Nombre << " uso " << usuario.Ataques[ataqueUsuario - 1].nombre << " causando " << danio << " de da\u00f1o!\n";
+                cout << usuario.Nombre << " uso " << usuario.Ataques[ataqueUsuario - 1].nombre << " causando " << danio << " de dano!\n";
 
                 if (enemigo.Vida <= 0) {
-                    cout << enemigo.Nombre << " fue debilitado. \u00a1Ganaste esta batalla!\n";
+                    cout << enemigo.Nombre << " fue debilitado. !Ganaste esta batalla!\n";
                     break;
                 }
             }
@@ -140,15 +143,23 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
                 ataqueEnemigo = rand() % 4;
             }
 
-            int danio = calcularDanio(enemigo.Ataques[ataqueEnemigo], usuario);
+            int danio = calcularDanioBase(enemigo.Ataques[ataqueEnemigo].danio, usuario.Defensa);
+            danio = static_cast<int>(danio * obtenerMultiplicador(enemigo.Tipo, usuario.Tipo));
+            if (danio < 1) danio = 1;
+
+            float multTipo = obtenerMultiplicador(enemigo.Tipo, usuario.Tipo);
+            if (multTipo > 1.0f) cout << "¡Es super efectivo!\n";
+            else if (multTipo < 1.0f && multTipo > 0.0f) cout << "No es muy efectivo...\n";
+            else if (multTipo == 0.0f) cout << "¡No afecta al rival!\n";
+
             usuario.Vida -= danio;
             enemigo.Ataques[ataqueEnemigo].pp--;
-            cout << enemigo.Nombre << " uso " << enemigo.Ataques[ataqueEnemigo].nombre << " causando " << danio << " de da\u00f1o!\n";
+            cout << enemigo.Nombre << " uso " << enemigo.Ataques[ataqueEnemigo].nombre << " causando " << danio << " de dano!\n";
 
             if (usuario.Vida <= 0) {
                 cout << usuario.Nombre << " fue debilitado. ";
                 usuarioSobrevive = false;
-                cout << "¡Perdiste este combate!\n";
+                cout << "!Perdiste este combate!\n";
                 break;
             }
         }
@@ -166,11 +177,11 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
         }
 
         if (pokemonsUsuario.empty()) {
-            cout << "¡Todos tus Pokémon han sido derrotados! Fin del torneo.\n";
+            cout << "Todos tus Pokemon han sido derrotados! Fin del torneo.\n";
             break;
         }
 
-        cout << "\u00a1Prep\u00e1rate para la pr\u00f3xima ronda!\n";
+        cout << "!Preparate para la proxima ronda!\n";
     }
 }
 

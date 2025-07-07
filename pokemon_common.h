@@ -9,6 +9,9 @@
 #include <map>
 #include <algorithm>
 #include <cctype>
+#include <limits>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -32,7 +35,7 @@ struct Pokemon
     string Tipo;
     int Vida;
     int VidaMaxima;
-    int Puntos;
+    int Puntos;     
     int Velocidad;
     int Defensa;
     Ataque Ataques[4];
@@ -52,10 +55,10 @@ map<pair<string, string>, float> TablaTipos = {
     {{"Agua", "Tierra"}, 2.0},
     {{"Agua", "Agua"}, 0.5},
     {{"Agua", "Planta"}, 0.5},
-    {{"Agua", "Dragón"}, 0.5},
+    {{"Agua", "Dragon"}, 0.5},
     {{"Fuego", "Agua"}, 0.5},
     {{"Fuego", "Roca"}, 0.5},
-    {{"Fuego", "Dragón"}, 0.5},
+    {{"Fuego", "Dragon"}, 0.5},
     {{"Planta", "Agua"}, 2.0},
     {{"Planta", "Roca"}, 2.0},
     {{"Planta", "Tierra"}, 2.0},
@@ -64,17 +67,17 @@ map<pair<string, string>, float> TablaTipos = {
     {{"Planta", "Bicho"}, 0.5},
     {{"Planta", "Volador"}, 0.5},
     {{"Planta", "Veneno"}, 0.5},
-    {{"Planta", "Dragón"}, 0.5},
-    {{"Eléctrico", "Agua"}, 2.0},
-    {{"Eléctrico", "Volador"}, 2.0},
-    {{"Eléctrico", "Planta"}, 0.5},
-    {{"Eléctrico", "Eléctrico"}, 0.5},
-    {{"Eléctrico", "Dragón"}, 0.5},
-    {{"Eléctrico", "Tierra"}, 0.0},
+    {{"Planta", "Dragon"}, 0.5},
+    {{"Electrico", "Agua"}, 2.0},
+    {{"Electrico", "Volador"}, 2.0},
+    {{"Electrico", "Planta"}, 0.5},
+    {{"Electrico", "Electrico"}, 0.5},
+    {{"Electrico", "Dragon"}, 0.5},
+    {{"Electrico", "Tierra"}, 0.0},
     {{"Hielo", "Planta"}, 2.0},
     {{"Hielo", "Tierra"}, 2.0},
     {{"Hielo", "Volador"}, 2.0},
-    {{"Hielo", "Dragón"}, 2.0},
+    {{"Hielo", "Dragon"}, 2.0},
     {{"Hielo", "Fuego"}, 0.5},
     {{"Hielo", "Agua"}, 0.5},
     {{"Hielo", "Hielo"}, 0.5},
@@ -83,7 +86,7 @@ map<pair<string, string>, float> TablaTipos = {
     {{"Lucha", "Hielo"}, 2.0},
     {{"Lucha", "Veneno"}, 0.5},
     {{"Lucha", "Volador"}, 0.5},
-    {{"Lucha", "Psíquico"}, 0.5},
+    {{"Lucha", "Psiquico"}, 0.5},
     {{"Lucha", "Bicho"}, 0.5},
     {{"Lucha", "Fantasma"}, 0.0},
     {{"Veneno", "Planta"}, 2.0},
@@ -93,7 +96,7 @@ map<pair<string, string>, float> TablaTipos = {
     {{"Veneno", "Roca"}, 0.5},
     {{"Veneno", "Fantasma"}, 0.5},
     {{"Tierra", "Fuego"}, 2.0},
-    {{"Tierra", "Eléctrico"}, 2.0},
+    {{"Tierra", "Electrico"}, 2.0},
     {{"Tierra", "Roca"}, 2.0},
     {{"Tierra", "Veneno"}, 2.0},
     {{"Tierra", "Bicho"}, 0.5},
@@ -102,13 +105,13 @@ map<pair<string, string>, float> TablaTipos = {
     {{"Volador", "Planta"}, 2.0},
     {{"Volador", "Lucha"}, 2.0},
     {{"Volador", "Bicho"}, 2.0},
-    {{"Volador", "Eléctrico"}, 0.5},
+    {{"Volador", "Electrico"}, 0.5},
     {{"Volador", "Roca"}, 0.5},
-    {{"Psíquico", "Lucha"}, 2.0},
-    {{"Psíquico", "Veneno"}, 2.0},
-    {{"Psíquico", "Psíquico"}, 0.5},
+    {{"Psiquico", "Lucha"}, 2.0},
+    {{"Psiquico", "Veneno"}, 2.0},
+    {{"Psiquico", "Psiquico"}, 0.5},
     {{"Bicho", "Planta"}, 2.0},
-    {{"Bicho", "Psíquico"}, 2.0},
+    {{"Bicho", "Psiquico"}, 2.0},
     {{"Bicho", "Fuego"}, 0.5},
     {{"Bicho", "Lucha"}, 0.5},
     {{"Bicho", "Fantasma"}, 0.5},
@@ -120,8 +123,9 @@ map<pair<string, string>, float> TablaTipos = {
     {{"Roca", "Tierra"}, 0.5},
     {{"Fantasma", "Fantasma"}, 2.0},
     {{"Fantasma", "Normal"}, 0.0},
-    {{"Fantasma", "Psíquico"}, 0.0},
-    {{"Dragón", "Dragón"}, 2.0}};
+    {{"Fantasma", "Psiquico"}, 0.0},
+    {{"Dragon", "Dragon"}, 2.0}};
+
 inline float obtenerMultiplicador(string atacante, string defensor)
 {
     auto clave = make_pair(atacante, defensor);
@@ -132,13 +136,66 @@ inline float obtenerMultiplicador(string atacante, string defensor)
     return 1.0;
 }
 
+inline std::string colorTipo(const std::string& tipo) {
+    if (tipo == "Agua") return "\033[34m" + tipo + "\033[0m";
+    if (tipo == "Fuego") return "\033[31m" + tipo + "\033[0m";
+    if (tipo == "Planta") return "\033[32m" + tipo + "\033[0m";
+    if (tipo == "Electrico") return "\033[33m" + tipo + "\033[0m";
+    if (tipo == "Hielo") return "\033[36m" + tipo + "\033[0m";
+    if (tipo == "Lucha") return "\033[91m" + tipo + "\033[0m";
+    if (tipo == "Veneno") return "\033[32m" + tipo + "\033[0m";       
+    if (tipo == "Tierra") return "\033[33m" + tipo + "\033[0m";
+    if (tipo == "Volador") return "\033[94m" + tipo + "\033[0m";
+    if (tipo == "Psiquico") return "\033[95m" + tipo + "\033[0m";
+    if (tipo == "Bicho") return "\033[92m" + tipo + "\033[0m";
+    if (tipo == "Roca") return "\033[33m" + tipo + "\033[0m";    
+    if (tipo == "Fantasma") return "\033[95m" + tipo + "\033[0m";
+    if (tipo == "Dragon") return "\033[34m" + tipo + "\033[0m";
+    if (tipo == "Normal") return "\033[37m" + tipo + "\033[0m";
+    return tipo;
+}
+
+inline int calcularDanioBase(int danioBase, int defensa) {
+    int danioFinal = danioBase - (defensa / 4);
+    return (danioFinal < 1) ? 1 : danioFinal;
+}
+
+inline vector<Pokemon> seleccionarPokemonsUsuario(vector<Pokemon>& pokemons, int cantidad) {
+    vector<Pokemon> seleccionados;
+    for (int i = 0; i < cantidad; ++i) {
+        cout << "\nSelecciona el Pokemon #" << (i + 1) << ":\n";
+        for (size_t j = 0; j < pokemons.size(); ++j) {
+            cout << j + 1 << ". " << pokemons[j].Nombre << " "
+                 << colorTipo(pokemons[j].Tipo)
+                 << " (Vida: " << pokemons[j].Vida << ")" << endl;
+        }
+        int eleccion;
+        do {
+            cout << "Opcion: ";
+            cin >> eleccion;
+            if (cin.fail() || eleccion < 1 || eleccion > (int)pokemons.size()) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Opcion invalida. Intenta de nuevo.\n";
+            } else {
+                break;
+            }
+        } while (true);
+
+        Pokemon elegido = pokemons[eleccion - 1];
+        seleccionados.push_back(elegido);
+        pokemons.erase(pokemons.begin() + eleccion - 1);
+    }
+    return seleccionados;
+}
+
 inline void aplicarEfectos(Pokemon &p)
 {
     if (p.efecto == Veneno)
     {
         int danio = p.VidaMaxima * 0.1;
         p.Vida -= danio;
-        cout << p.Nombre << " sufre " << danio << " de daño por veneno!\n";
+        cout << p.Nombre << " sufre " << danio << " de dano por veneno!\n";
         p.RondasConEfecto--;
         if (p.RondasConEfecto <= 0)
         {
@@ -149,7 +206,7 @@ inline void aplicarEfectos(Pokemon &p)
     {
         int danio = p.VidaMaxima * 0.05;
         p.Vida -= danio;
-        cout << p.Nombre << " sufre " << danio << " de daño por quemadura!\n";
+        cout << p.Nombre << " sufre " << danio << " de dano por quemadura!\n";
         p.RondasConEfecto--;
         if (p.RondasConEfecto <= 0)
         {
@@ -161,10 +218,12 @@ inline void aplicarEfectos(Pokemon &p)
 inline void aplicarDanio(Pokemon &atacante, Pokemon &defensor, Ataque ataque)
 {
     float mult = obtenerMultiplicador(atacante.Tipo, defensor.Tipo);
-    int danioFinal = static_cast<int>(ataque.danio * mult);
+    int danioFinal = calcularDanioBase(ataque.danio, defensor.Defensa);
+    danioFinal = static_cast<int>(danioFinal * mult);
+    if (danioFinal < 1) danioFinal = 1;
     defensor.Vida -= danioFinal;
 
-    cout << atacante.Nombre << " usa " << ataque.nombre << " e inflige " << danioFinal << " de daño a " << defensor.Nombre << "!\n";
+    cout << atacante.Nombre << " usa " << ataque.nombre << " e inflige " << danioFinal << " de dano a " << defensor.Nombre << "!\n";
 
     atacante.ContadorGolpes++;
 
@@ -205,26 +264,6 @@ inline int stringAInt(const string& s) {
     return valor;
 }
 
-
-inline std::string colorTipo(const std::string& tipo) {
-    if (tipo == "Agua") return "\033[34m" + tipo + "\033[0m";
-    if (tipo == "Fuego") return "\033[31m" + tipo + "\033[0m";
-    if (tipo == "Planta") return "\033[32m" + tipo + "\033[0m";
-    if (tipo == "Eléctrico" || tipo == "Electrico") return "\033[33m" + tipo + "\033[0m";
-    if (tipo == "Hielo") return "\033[36m" + tipo + "\033[0m";
-    if (tipo == "Lucha") return "\033[91m" + tipo + "\033[0m";
-    if (tipo == "Veneno") return "\033[32m" + tipo + "\033[0m";       
-    if (tipo == "Tierra") return "\033[33m" + tipo + "\033[0m";
-    if (tipo == "Volador") return "\033[94m" + tipo + "\033[0m";
-    if (tipo == "Psíquico" || tipo == "Psiquico") return "\033[95m" + tipo + "\033[0m";
-    if (tipo == "Bicho") return "\033[92m" + tipo + "\033[0m";
-    if (tipo == "Roca") return "\033[33m" + tipo + "\033[0m";    
-    if (tipo == "Fantasma") return "\033[95m" + tipo + "\033[0m";
-    if (tipo == "Dragón" || tipo == "Dragon") return "\033[34m" + tipo + "\033[0m";
-    if (tipo == "Normal") return "\033[37m" + tipo + "\033[0m";
-    return tipo;
-}
-
 vector<Pokemon> leerPokemons(const string &archivoNombre)
 {
     ifstream archivo(archivoNombre);
@@ -260,7 +299,7 @@ vector<Pokemon> leerPokemons(const string &archivoNombre)
                 p.Vida = stringAInt(valor);
                 p.VidaMaxima = p.Vida;
             } else {
-                cerr << "Error: Vida no es un número válido: '" << valor << "'" << endl;
+                cerr << "Error: Vida no es un numero valido: '" << valor << "'" << endl;
                 p.Vida = p.VidaMaxima = 0;
             }
         }
@@ -270,7 +309,7 @@ vector<Pokemon> leerPokemons(const string &archivoNombre)
             if (esNumero(valor)) {
                 p.Puntos = stringAInt(valor);
             } else {
-                cerr << "Error: Puntos no es un número válido: '" << valor << "'" << endl;
+                cerr << "Error: Puntos no es un numero valido: '" << valor << "'" << endl;
                 p.Puntos = 0;
             }
         }

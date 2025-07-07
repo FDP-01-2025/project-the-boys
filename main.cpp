@@ -50,7 +50,7 @@ void PvEmatch()
 
 void Matchrecords()
 {
-    cout << "\n[Historial de partidas próximamente disponible.]\n";
+    cout << "\n[Historial de partidas proximamente disponible.]\n";
 }
 
 int main()
@@ -80,7 +80,7 @@ int main()
 
             if (pokemonsParaPvp.size() < 6)
             {
-                cout << "No hay suficientes Pokémon para PvP.\n";
+                cout << "No hay suficientes Pokemon para PvP.\n";
                 break;
             }
 

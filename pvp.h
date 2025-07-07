@@ -2,47 +2,8 @@
 #define PVP_H
 
 #include "pokemon_common.h"
-#include <limits>
-#include <cstdlib>
-#include <ctime>
 
-// Cálculo de daño según defensa
-inline int calcularDanio(int danioBase, int defensa) {
-    int danioFinal = danioBase - (defensa / 4);
-    return (danioFinal < 1) ? 1 : danioFinal;
-}
-
-// Selección de pokemons por el usuario
-inline vector<Pokemon> seleccionarPokemonsUsuario(vector<Pokemon>& pokemons, int cantidad) {
-    vector<Pokemon> seleccionados;
-    for (int i = 0; i < cantidad; ++i) {
-        cout << "\nSelecciona el Pokémon #" << (i + 1) << ":\n";
-        for (size_t j = 0; j < pokemons.size(); ++j) {
-            cout << j + 1 << ". " << pokemons[j].Nombre << " "
-                 << colorTipo(pokemons[j].Tipo)
-                 << " (Vida: " << pokemons[j].Vida << ")" << endl;
-        }
-        int eleccion;
-        do {
-            cout << "Opción: ";
-            cin >> eleccion;
-            if (cin.fail() || eleccion < 1 || eleccion > (int)pokemons.size()) {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Opción inválida. Intenta de nuevo.\n";
-            } else {
-                break;
-            }
-        } while (true);
-
-        Pokemon elegido = pokemons[eleccion - 1];
-        seleccionados.push_back(elegido);
-        pokemons.erase(pokemons.begin() + eleccion - 1);
-    }
-    return seleccionados;
-}
-
-// Lógica principal de batalla PvP
+// Logica principal de batalla PvP
 inline void batallaPvP(vector<Pokemon> equipo1, vector<Pokemon> equipo2) {
     int idx1 = 0, idx2 = 0;
     srand(static_cast<unsigned>(time(0)));
@@ -86,11 +47,19 @@ inline void batallaPvP(vector<Pokemon> equipo1, vector<Pokemon> equipo2) {
                 cin >> ataque;
             } while (ataque < 1 || ataque > 4 || atacante.Ataques[ataque - 1].pp <= 0);
 
-            int danioReal = calcularDanio(atacante.Ataques[ataque - 1].danio, defensor.Defensa);
+            int danioReal = calcularDanioBase(atacante.Ataques[ataque - 1].danio, defensor.Defensa);
+            danioReal = static_cast<int>(danioReal * obtenerMultiplicador(atacante.Tipo, defensor.Tipo));
+            if (danioReal < 1) danioReal = 1;
+
+            float multTipo = obtenerMultiplicador(atacante.Tipo, defensor.Tipo);
+            if (multTipo > 1.0f) cout << "¡Es super efectivo!\n";
+            else if (multTipo < 1.0f && multTipo > 0.0f) cout << "No es muy efectivo...\n";
+            else if (multTipo == 0.0f) cout << "¡No afecta al rival!\n";
+
             defensor.Vida -= danioReal;
             atacante.Ataques[ataque - 1].pp--;
 
-            cout << atacante.Nombre << " usó " << atacante.Ataques[ataque - 1].nombre << " e hizo "
+            cout << atacante.Nombre << " uso " << atacante.Ataques[ataque - 1].nombre << " e hizo "
                  << danioReal << " de dano!\n";
 
             if (defensor.efecto == Ninguno && (rand() % 100 < 25)) {
