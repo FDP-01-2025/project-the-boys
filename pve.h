@@ -15,8 +15,8 @@ struct TempJugador {
     double incrementoAtaque = 1.5; 
 
     void subirStats(Pokemon& p) {
-        p.vida = static_cast<int>(p.vida * incrementoVida);
-        for (auto& atk : p.ataques) {
+        p.Vida = static_cast<int>(p.Vida * incrementoVida);
+        for (auto& atk : p.Ataques) {
             atk.danio = static_cast<int>(atk.danio * incrementoAtaque);
         }
     }
@@ -26,21 +26,21 @@ struct TempBot {
     double incrementoAtaque = 1.3; 
 
     void subirStats(Pokemon& p) {
-        p.vida = static_cast<int>(p.vida * incrementoVida);
-        for (auto& atk : p.ataques) {
+        p.Vida = static_cast<int>(p.Vida * incrementoVida);
+        for (auto& atk : p.Ataques) {
             atk.danio = static_cast<int>(atk.danio * incrementoAtaque);
         }
     }
 };
 
 int calcularDanio(const Ataque& atk, const Pokemon& defensor) {
-    return std::max(1, atk.danio - defensor.defensa);
+    return std::max(1, atk.danio - defensor.Defensa);
 }
 
 Pokemon seleccionarPokemonUsuario(vector<Pokemon>& pokemons) {
     cout << "\nSelecciona tu Pokemon:\n";
     for (size_t i = 0; i < pokemons.size(); ++i) {
-        cout << i + 1 << ". " << pokemons[i].nombre << " (Vida: " << pokemons[i].vida << ")\n";
+        cout << i + 1 << ". " << pokemons[i].Nombre << " (Vida: " << pokemons[i].Vida << ")\n";
     }
     int eleccion;
     do {
@@ -84,7 +84,7 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
         Pokemon usuario = seleccionarPokemonUsuario(pokemonsUsuario);
         Pokemon enemigo = seleccionarPokemonRandom(pokemonsEnemigos);
 
-        cout << "Tu Pok\u00e9mon: " << usuario.nombre << " vs Enemigo: " << enemigo.nombre << "\n";
+        cout << "Tu Pok\u00e9mon: " << usuario.Nombre << " vs Enemigo: " << enemigo.Nombre << "\n";
 
         usuario.vivo = true;
         enemigo.vivo = true;
@@ -93,62 +93,62 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
             aplicarEfectos(usuario);
             aplicarEfectos(enemigo);
 
-            if (usuario.vida <= 0) {
-                cout << usuario.nombre << " fue debilitado por los efectos.\n";
+            if (usuario.Vida <= 0) {
+                cout << usuario.Nombre << " fue debilitado por los efectos.\n";
                 break;
             }
-            if (enemigo.vida <= 0) {
-                cout << enemigo.nombre << " fue debilitado por los efectos.\n";
+            if (enemigo.Vida <= 0) {
+                cout << enemigo.Nombre << " fue debilitado por los efectos.\n";
                 break;
             }
 
-            bool turnoUsuario = usuario.velocidad >= enemigo.velocidad;
+            bool turnoUsuario = usuario.Velocidad >= enemigo.Velocidad;
 
             if (turnoUsuario) {
-                cout << "\nTu Pok\u00e9mon: " << usuario.nombre << " (Vida: " << usuario.vida << ")\n";
-                cout << "Enemigo: " << enemigo.nombre << " (Vida: " << enemigo.vida << ")\n";
+                cout << "\nTu Pok\u00e9mon: " << usuario.Nombre << " (Vida: " << usuario.Vida << ")\n";
+                cout << "Enemigo: " << enemigo.Nombre << " (Vida: " << enemigo.Vida << ")\n";
 
                 cout << "Ataques:\n";
                 for (int i = 0; i < 4; ++i) {
-                    cout << i + 1 << ". " << usuario.ataques[i].nombre << " (Da\u00f1o: " << usuario.ataques[i].danio
-                         << ", PP: " << usuario.ataques[i].pp << ")\n";
+                    cout << i + 1 << ". " << usuario.Ataques[i].nombre << " (Da\u00f1o: " << usuario.Ataques[i].danio
+                         << ", PP: " << usuario.Ataques[i].pp << ")\n";
                 }
                 int ataqueUsuario;
                 do {
                     cout << "Selecciona ataque (1-4): ";
                     cin >> ataqueUsuario;
-                } while (ataqueUsuario < 1 || ataqueUsuario > 4 || usuario.ataques[ataqueUsuario - 1].pp <= 0);
+                } while (ataqueUsuario < 1 || ataqueUsuario > 4 || usuario.Ataques[ataqueUsuario - 1].pp <= 0);
 
-                int danio = calcularDanio(usuario.ataques[ataqueUsuario - 1], enemigo);
-                enemigo.vida -= danio;
-                usuario.ataques[ataqueUsuario - 1].pp--;
-                cout << usuario.nombre << " uso " << usuario.ataques[ataqueUsuario - 1].nombre << " causando " << danio << " de da\u00f1o!\n";
+                int danio = calcularDanio(usuario.Ataques[ataqueUsuario - 1], enemigo);
+                enemigo.Vida -= danio;
+                usuario.Ataques[ataqueUsuario - 1].pp--;
+                cout << usuario.Nombre << " uso " << usuario.Ataques[ataqueUsuario - 1].nombre << " causando " << danio << " de da\u00f1o!\n";
 
-                if (enemigo.vida <= 0) {
-                    cout << enemigo.nombre << " fue debilitado. \u00a1Ganaste esta batalla!\n";
+                if (enemigo.Vida <= 0) {
+                    cout << enemigo.Nombre << " fue debilitado. \u00a1Ganaste esta batalla!\n";
                     break;
                 }
             }
 
             int ataqueEnemigo = rand() % 4;
-            while (enemigo.ataques[ataqueEnemigo].pp <= 0) {
+            while (enemigo.Ataques[ataqueEnemigo].pp <= 0) {
                 ataqueEnemigo = rand() % 4;
             }
 
-            int danio = calcularDanio(enemigo.ataques[ataqueEnemigo], usuario);
-            usuario.vida -= danio;
-            enemigo.ataques[ataqueEnemigo].pp--;
-            cout << enemigo.nombre << " uso " << enemigo.ataques[ataqueEnemigo].nombre << " causando " << danio << " de da\u00f1o!\n";
+            int danio = calcularDanio(enemigo.Ataques[ataqueEnemigo], usuario);
+            usuario.Vida -= danio;
+            enemigo.Ataques[ataqueEnemigo].pp--;
+            cout << enemigo.Nombre << " uso " << enemigo.Ataques[ataqueEnemigo].nombre << " causando " << danio << " de da\u00f1o!\n";
 
-            if (usuario.vida <= 0) {
-                cout << usuario.nombre << " fue debilitado. Perdiste el torneo.\n";
+            if (usuario.Vida <= 0) {
+                cout << usuario.Nombre << " fue debilitado. Perdiste el torneo.\n";
                 return;
             }
         }
         
         
         tempJugador.subirStats(usuario);
-        cout << usuario.nombre << " ahora tiene Vida: " << usuario.vida << "\n";
+        cout << usuario.Nombre << " ahora tiene Vida: " << usuario.Vida << "\n";
 
         for (auto& e : pokemonsEnemigos) {
             tempBot.subirStats(e);
