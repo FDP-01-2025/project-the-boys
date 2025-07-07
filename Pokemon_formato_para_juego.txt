@@ -614,7 +614,7 @@ Ataque3: Ice Beam,90,20
 Ataque4: Earth Power,90,20
 
 Hypno
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 373
 Puntos: 100
 Defensa: 290
