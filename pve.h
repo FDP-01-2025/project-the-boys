@@ -161,5 +161,4 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
     }
 }
 
-
 #endif
