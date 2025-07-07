@@ -65,7 +65,7 @@ Ataque3: Poison sting,30,5
 Ataque4: Picotazo,75,15
 
 Pikachu
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 273
 Puntos: 100
 Defensa: 190
@@ -328,7 +328,7 @@ Ataque3: Rock Slide,75,15
 Ataque4: U-turn,70,15
 
 Electrode
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 323
 Puntos: 100
 Defensa: 240
@@ -449,7 +449,7 @@ Ataque3: Barrier,100,20
 Ataque4: Poison Jab,80,15
 
 Electabuzz
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 333
 Puntos: 100
 Defensa: 240
@@ -504,7 +504,7 @@ Ataque3: Crunch,80,15
 Ataque4: Earthquake,100,20
 
 Magneton
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 303
 Puntos: 100
 Defensa: 280
@@ -581,7 +581,7 @@ Ataque3: Aurora Beam,65,10
 Ataque4: Bite,60,10
 
 Jolteon
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 333
 Puntos: 100
 Defensa: 240
@@ -680,7 +680,7 @@ Ataque3: Drill Peck,80,15
 Ataque4: Quick Attack,40,5
 
 Zapdos
-Tipo: Eléctrico
+Tipo: Electrico
 Vida: 383
 Puntos: 100
 Defensa: 300
@@ -757,7 +757,7 @@ Ataque3: Poison Jab,80,15
 Ataque4: Drill Run,80,15
 
 Mr. Mime
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 283
 Puntos: 100
 Defensa: 260
@@ -768,7 +768,7 @@ Ataque3: Thunder Wave,85,15
 Ataque4: Light Screen,120,30
 
 Jynx
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 333
 Puntos: 100
 Defensa: 220
@@ -790,7 +790,7 @@ Ataque3: Ice Beam,90,20
 Ataque4: Slam,90,20
 
 Mewtwo
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 415
 Puntos: 100
 Defensa: 300
@@ -801,7 +801,7 @@ Ataque3: Aura Sphere,80,15
 Ataque4: Thunderbolt,90,20
 
 Mew
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 403
 Puntos: 100
 Defensa: 300
