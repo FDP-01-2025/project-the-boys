@@ -141,7 +141,7 @@ Ataque2: Extreme Speed,80,15
 Ataque3: Bite,60,10
 
 Alakazam
-Tipo: Psíquico
+Tipo: Psiquico
 Vida: 313
 Puntos: 100
 Defensa: 210
