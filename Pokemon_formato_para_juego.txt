@@ -1,598 +1,673 @@
-**Venusaur (Planta)**  
-Vida del Pokémon: 363  
-Defensa: 328 | Velocidad: 284  
-Ataque 1: Razor Leaf; Daño: 55 | PP: 25  
-Ataque 2: Vine Whip; Daño: 45 | PP: 25  
-Ataque 3: Body Slam; Daño: 85 | PP: 15  
-Ataque 4: Giga Drain; Daño: 60 | PP: 5  
-
-**Charizard (Fuego)**  
-Vida del Pokémon: 360  
-Defensa: 293 | Velocidad: 328  
-Ataque 1: Lanzallamas; Daño: 90 | PP: 15  
-Ataque 2: Tajo aéreo; Daño: 75 | PP: 15  
-Ataque 3: Arañazo; Daño: 40 | PP: 35  
-Ataque 4: Aire afilado; Daño: 60 | PP: 25  
-
-**Blastoise (Agua)**  
-Vida del Pokémon: 362  
-Defensa: 361 | Velocidad: 280  
-Ataque 1: Hidrobomba; Daño: 110 | PP: 5  
-Ataque 2: Pistola de agua; Daño: 40 | PP: 25  
-Ataque 3: Bite; Daño: 60 | PP: 25  
-Ataque 4: Placaje; Daño: 100 | PP: 35  
-
-**Pidgeot (Volador)**  
-Vida del Pokémon: 369  
-Defensa: 289 | Velocidad: 349  
-Ataque 1: Wing Attack; Daño: 60 | PP: 35  
-Ataque 2: Quick Attack; Daño: 40 | PP: 30  
-Ataque 3: Tackle; Daño: 40 | PP: 35  
-Ataque 4: Aerial Ace; Daño: 60 | PP: 20  
-
-**Butterfree (Bicho)**  
-Vida del Pokémon: 323  
-Defensa: 250 | Velocidad: 270  
-Ataque 1: Tornado; Daño: 45 | PP: 15  
-Ataque 2: String shot; Daño: 100 | PP: 30  
-Ataque 3: Poison powder; Daño: 30 | PP: 25  
-Ataque 4: Psybeam; Daño: 65 | PP: 20  
-
-**Beedrill (Bicho)**  
-Vida del Pokémon: 333  
-Defensa: 190 | Velocidad: 295  
-Ataque 1: Pin missile; Daño: 45 | PP: 15  
-Ataque 2: String shot; Daño: 100 | PP: 30  
-Ataque 3: Poison sting; Daño: 30 | PP: 25  
-Ataque 4: Picotazo; Daño: 75 | PP: 25  
-
-**Pikachu (Eléctrico)**  
-Vida del Pokémon: 273  
-Defensa: 190 | Velocidad: 320  
-Ataque 1: Thunderbolt; Daño: 90 | PP: 15  
-Ataque 2: Quick Attack; Daño: 40 | PP: 30  
-Ataque 3: Slam; Daño: 80 | PP: 20  
-Ataque 4: Shock Wave; Daño: 60 | PP: 20  
-
-**Nidoqueen (Tierra)**  
-Vida del Pokémon: 343  
-Defensa: 317 | Velocidad: 269  
-Ataque 1: Earthquake; Daño: 100 | PP: 10  
-Ataque 2: Ice Beam; Daño: 90 | PP: 10  
-Ataque 3: Body Slam; Daño: 85 | PP: 15  
-Ataque 4: Surf; Daño: 90 | PP: 15  
-
-**Nidoking (Veneno)**  
-Vida del Pokémon: 325  
-Defensa: 277 | Velocidad: 295  
-Ataque 1: Earthquake; Daño: 100 | PP: 10  
-Ataque 2: Sludge Bomb; Daño: 90 | PP: 10  
-Ataque 3: Megahorn; Daño: 120 | PP: 10  
-Ataque 4: Thunderbolt; Daño: 90 | PP: 15  
-
-**Fearow (Volador)**  
-Vida del Pokémon: 333  
-Defensa: 240 | Velocidad: 340  
-Ataque 1: Ataque furia; Daño: 35 | PP: 10  
-Ataque 2: Ataque ala; Daño: 100 | PP: 35  
-Ataque 3: Pico taladro; Daño: 80 | PP: 25  
-Ataque 4: Derribo; Daño: 90 | PP: 30  
-
-**Sandslash (Tierra)**  
-Vida del Pokémon: 353  
-Defensa: 350 | Velocidad: 260  
-Ataque 1: Terremoto; Daño: 120 | PP: 45  
-Ataque 2: Excavar; Daño: 80 | PP: 30  
-Ataque 3: Danza espada; Daño: — | PP: 20  
-Ataque 4: Arañazo; Daño: 40 | PP: 10  
-
-**Parasect (Bicho)**  
-Vida del Pokémon: 323  
-Defensa: 280 | Velocidad: 210  
-Ataque 1: Slash; Daño: 70 | PP: 20  
-Ataque 2: X-Scissor; Daño: 80 | PP: 15  
-Ataque 3: Seed Bomb; Daño: 80 | PP: 15  
-Ataque 4: Scratch; Daño: 40 | PP: 35  
-
-**Arcanine (Fuego)**  
-Vida del Pokémon: 383  
-Defensa: 300 | Velocidad: 330  
-Ataque 1: Flamethrower; Daño: 90 | PP: 15  
-Ataque 2: Extreme Speed; Daño: 80 | PP: 5  
-Ataque 3: Bite; Daño: 60 | PP: 25  
-
-**Alakazam (Psíquico)**  
-Vida del Pokémon: 313  
-Defensa: 210 | Velocidad: 370  
-Ataque 1: Psychic; Daño: 90 | PP: 10  
-Ataque 2: Psybeam; Daño: 65 | PP: 20  
-Ataque 3: Confusion; Daño: 50 | PP: 25  
-Ataque 4: Signal Beam; Daño: 75 | PP: 15  
-
-**Machamp (Lucha)**  
-Vida del Pokémon: 383  
-Defensa: 310 | Velocidad: 230  
-Ataque 1: Cross Chop; Daño: 100 | PP: 5  
-Ataque 2: Karate Chop; Daño: 50 | PP: 25  
-Ataque 3: Brick Break; Daño: 75 | PP: 15  
-Ataque 4: Vital Throw; Daño: 70 | PP: 10  
-
-**Clefable (Hada)**  
-Vida del Pokémon: 393  
-Defensa: 290 | Velocidad: 240  
-Ataque 1: Moonblast; Daño: 95 | PP: 15  
-Ataque 2: Meteor Mash; Daño: 90 | PP: 10  
-Ataque 3: Thunder Wave; Daño: 110 | PP: 20  
-Ataque 4: Soft-Boiled; Daño: 90 | PP: 10  
-
-**Ninetales (Fuego)**  
-Vida del Pokémon: 349  
-Defensa: 280 | Velocidad: 328  
-Ataque 1: Flamethrower; Daño: 90 | PP: 15  
-Ataque 2: Fire Blast; Daño: 110 | PP: 5  
-Ataque 3: Will-O-Wisp; Daño: 90 | PP: 15  
-Ataque 4: Energy Ball; Daño: 90 | PP: 10  
-
-**Wigglytuff (Hada)**  
-Vida del Pokémon: 483  
-Defensa: 250 | Velocidad: 220  
-Ataque 1: Hyper Voice; Daño: 90 | PP: 10  
-Ataque 2: Play Rough; Daño: 90 | PP: 10  
-Ataque 3: Thunderbolt; Daño: 90 | PP: 15  
-Ataque 4: Sing; Daño: 40 | PP: 15  
-
-**Golbat (Veneno)**  
-Vida del Pokémon: 353  
-Defensa: 270 | Velocidad: 310  
-Ataque 1: Poison Fang; Daño: 50 | PP: 15  
-Ataque 2: Wing Attack; Daño: 60 | PP: 35  
-Ataque 3: Leech Life; Daño: 80 | PP: 10  
-Ataque 4: Confuse Ray; Daño: 80 | PP: 10  
-
-**Vileplume (Planta)**  
-Vida del Pokémon: 353  
-Defensa: 320 | Velocidad: 240  
-Ataque 1: Petal Dance; Daño: 120 | PP: 30  
-Ataque 2: Sludge Bomb; Daño: 90 | PP: 10  
-Ataque 3: Solar Beam; Daño: 120 | PP: 30  
-Ataque 4: Sleep Powder; Daño: 100 | PP: 15  
-
-**Golem (Roca)**  
-Vida del Pokémon: 363  
-Defensa: 400 | Velocidad: 200  
-Ataque 1: Earthquake; Daño: 100 | PP: 10  
-Ataque 2: Rock Slide; Daño: 75 | PP: 10  
-Ataque 3: Tackle; Daño: 35 | PP: 35  
-Ataque 4: Double-Edge; Daño: 120 | PP: 15  
-
-**Rapidash (Fuego)**  
-Vida del Pokémon: 333  
-Defensa: 250 | Velocidad: 350  
-Ataque 1: Flamethrower; Daño: 90 | PP: 15  
-Ataque 2: Stomp; Daño: 65 | PP: 20  
-Ataque 3: Fire Spin; Daño: 35 | PP: 15  
-Ataque 4: Horn Attack; Daño: 65 | PP: 25  
-
-**Slowbro (Agua)**  
-Vida del Pokémon: 393  
-Defensa: 350 | Velocidad: 180  
-Ataque 1: Psychic; Daño: 90 | PP: 10  
-Ataque 2: Surf; Daño: 90 | PP: 15  
-Ataque 3: Ice Beam; Daño: 90 | PP: 10  
-Ataque 4: Body Slam; Daño: 85 | PP: 15  
-
-**Cloyster (Hielo)**  
-Vida del Pokémon: 303  
-Defensa: 450 | Velocidad: 210  
-Ataque 1: Ice Shard; Daño: 40 | PP: 30  
-Ataque 2: Icicle Spear; Daño: 50 | PP: 10  
-Ataque 3: Water Pulse; Daño: 60 | PP: 20  
-Ataque 4: Rock Blast; Daño: 50 | PP: 10  
-
-**Gengar (Fantasma)**  
-Vida del Pokémon: 323  
-Defensa: 220 | Velocidad: 350  
-Ataque 1: Shadow Ball; Daño: 80 | PP: 15  
-Ataque 2: Lick; Daño: 20 | PP: 30  
-Ataque 3: Dark Pulse; Daño: 80 | PP: 15  
-Ataque 4: Psychic; Daño: 90 | PP: 10  
-
-**Kingler (Agua)**  
-Vida del Pokémon: 313  
-Defensa: 320 | Velocidad: 240  
-Ataque 1: Crabhammer; Daño: 90 | PP: 10  
-Ataque 2: Vice Grip; Daño: 55 | PP: 30  
-Ataque 3: Slash; Daño: 70 | PP: 20  
-Ataque 4: Stomp; Daño: 65 | PP: 20  
-
-**Dugtrio (Tierra)**  
-Vida del Pokémon: 273  
-Defensa: 180 | Velocidad: 360  
-Ataque 1: Earthquake; Daño: 100 | PP: 10  
-Ataque 2: Rock Slide; Daño: 75 | PP: 10  
-Ataque 3: Sucker Punch; Daño: 70 | PP: 5  
-Ataque 4: Sand Attack; Daño: 110 | PP: 15  
-
-**Venomoth (Bicho)**  
-Vida del Pokémon: 343  
-Defensa: 250 | Velocidad: 310  
-Ataque 1: Bug Buzz; Daño: 90 | PP: 10  
-Ataque 2: Psychic; Daño: 90 | PP: 10  
-Ataque 3: Sleep Powder; Daño: 100 | PP: 15  
-Ataque 4: Quiver Dance; Daño: 140 | PP: 25  
-
-**Persian (Normal)**  
-Vida del Pokémon: 333  
-Defensa: 240 | Velocidad: 370  
-Ataque 1: Slash; Daño: 70 | PP: 20  
-Ataque 2: Power Gem; Daño: 80 | PP: 20  
-Ataque 3: Fake Out; Daño: 40 | PP: 10  
-Ataque 4: Taunt; Daño: 90 | PP: 20  
-
-**Golduck (Agua)**  
-Vida del Pokémon: 363  
-Defensa: 280 | Velocidad: 290  
-Ataque 1: Hydro Pump; Daño: 110 | PP: 5  
-Ataque 2: Psychic; Daño: 90 | PP: 10  
-Ataque 3: Ice Beam; Daño: 90 | PP: 10  
-Ataque 4: Confuse Ray; Daño: 80 | PP: 10  
-
-**Primeape (Lucha)**  
-Vida del Pokémon: 333  
-Defensa: 240 | Velocidad: 340  
-Ataque 1: Close Combat; Daño: 120 | PP: 5  
-Ataque 2: Earthquake; Daño: 100 | PP: 10  
-Ataque 3: Rock Slide; Daño: 75 | PP: 10  
-Ataque 4: U-turn; Daño: 70 | PP: 20  
-
-**Electrode (Eléctrico)**  
-Vida del Pokémon: 323  
-Defensa: 240 | Velocidad: 390  
-Ataque 1: Thunderbolt; Daño: 90 | PP: 15  
-Ataque 2: Explosion; Daño: 250 | PP: 5  
-Ataque 3: Swift; Daño: 60 | PP: 20  
-Ataque 4: Tackle; Daño: 40 | PP: 35  
-
-**Exeggutor (Planta)**  
-Vida del Pokémon: 393  
-Defensa: 300 | Velocidad: 220  
-Ataque 1: Psychic; Daño: 90 | PP: 10  
-Ataque 2: Seed Bomb; Daño: 80 | PP: 15  
-Ataque 3: Body Slam; Daño: 85 | PP: 15  
-Ataque 4: Stomp; Daño: 65 | PP: 20  
-
-**Hitmonlee (Lucha)**  
-Vida del Pokémon: 303  
-Defensa: 240 | Velocidad: 320  
-Ataque 1: High Jump Kick; Daño: 130 | PP: 10  
-Ataque 2: Brick Break; Daño: 75 | PP: 15  
-Ataque 3: Rolling Kick; Daño: 60 | PP: 15  
-Ataque 4: Double Kick; Daño: 60 | PP: 30  
-
-**Hitmonchan (Lucha)**  
-Vida del Pokémon: 303  
-Defensa: 280 | Velocidad: 276  
-Ataque 1: Fire Punch; Daño: 75 | PP: 15  
-Ataque 2: Ice Punch; Daño: 75 | PP: 15  
-Ataque 3: Thunder Punch; Daño: 75 | PP: 15  
-Ataque 4: Mach Punch; Daño: 40 | PP: 30  
-
-**Rhydon (Tierra)**  
-Vida del Pokémon: 413  
-Defensa: 380 | Velocidad: 190  
-Ataque 1: Earthquake; Daño: 100 | PP: 10  
-Ataque 2: Rock Slide; Daño: 75 | PP: 10  
-Ataque 3: Horn Attack; Daño: 65 | PP: 25  
-Ataque 4: Double-Edge; Daño: 120 | PP: 15  
-
-**Poliwrath (Agua)**  
-Vida del Pokémon: 383  
-Defensa: 330 | Velocidad: 260  
-Ataque 1: Dynamic Punch; Daño: 100 | PP: 5  
-Ataque 2: Waterfall; Daño: 80 | PP: 15  
-Ataque 3: Ice Punch; Daño: 75 | PP: 15  
-Ataque 4: Bulk Up; Daño: 100 | PP: 20  
-
-**Kangaskhan (Normal)**  
-Vida del Pokémon: 413  
-Defensa: 300 | Velocidad: 280  
-Ataque 1: Dizzy Punch; Daño: 70 | PP: 10  
-Ataque 2: Crunch; Daño: 80 | PP: 15  
-Ataque 3: Stomp; Daño: 65 | PP: 20  
-Ataque 4: Brick Break; Daño: 75 | PP: 15  
-
-**Starmie (Agua)**  
-Vida del Pokémon: 323  
-Defensa: 280 | Velocidad: 360  
-Ataque 1: Psychic; Daño: 90 | PP: 10  
-Ataque 2: Surf; Daño: 90 | PP: 15  
-Ataque 3: Thunderbolt; Daño: 90 | PP: 15  
-Ataque 4: Rapid Spin; Daño: 50 | PP: 40  
-
-**Scyther (Bicho)**  
-Vida del Pokémon: 343  
-Defensa: 280 | Velocidad: 350  
-Ataque 1: Wing Attack; Daño: 60 | PP: 35  
-Ataque 2: Slash; Daño: 70 | PP: 20  
-Ataque 3: X-Scissor; Daño: 80 | PP: 15  
-Ataque 4: Fury Cutter; Daño: 40 | PP: 20  
-
-**Victreebel (Planta)**  
-Vida del Pokémon: 363 
-Defensa: 260 | Velocidad: 240  
-Ataque 1: Leaf Blade; Daño: 90 | PP: 15  
-Ataque 2: Sludge Bomb; Daño: 90 | PP: 10  
-Ataque 3: Solar Beam; Daño: 120 | PP: 10  
-Ataque 4: Sleep Powder; Daño: 100 | PP: 15  
-
-**Tentacruel (Agua)**  
-Vida del Pokémon: 363  
-Defensa: 300 | Velocidad: 280  
-Ataque 1: Surf; Daño: 90 | PP: 15  
-Ataque 2: Sludge Wave; Daño: 95 | PP: 10  
-Ataque 3: Barrier; Daño: 100 | PP: 20  
-Ataque 4: Poison Jab; Daño: 80 | PP: 20  
-
-**Electabuzz (Eléctrico)**  
-Vida del Pokémon: 333  
-Defensa: 240 | Velocidad: 330  
-Ataque 1: Thunderbolt; Daño: 90 | PP: 15  
-Ataque 2: Thunder Punch; Daño: 75 | PP: 15  
-Ataque 3: Swift; Daño: 60 | PP: 20  
-Ataque 4: Low Kick; Daño: 60 | PP: 25  
-
-**Magmar (Fuego)**  
-Vida del Pokémon: 333  
-Defensa: 250 | Velocidad: 320  
-Ataque 1: Flamethrower; Daño: 90 | PP: 15  
-Ataque 2: Fire Punch; Daño: 75 | PP: 15  
-Ataque 3: Ember; Daño: 40 | PP: 25  
-Ataque 4: Brick Break; Daño: 75 | PP: 15  
-
-**Pinsir (Bicho)**  
-Vida del Pokémon: 333  
-Defensa: 300 | Velocidad: 280  
-Ataque 1: X-Scissor; Daño: 80 | PP: 15  
-Ataque 2: Vice Grip; Daño: 55 | PP: 30  
-Ataque 3: Seismic Toss; Daño: 60 (fijo) | PP: 20  
-Ataque 4: Rock Slide; Daño: 75 | PP: 10  
-
-**Tauros (Normal)**  
-Vida del Pokémon: 353  
-Defensa: 280 | Velocidad: 350  
-Ataque 1: Body Slam; Daño: 85 | PP: 15  
-Ataque 2: Hyper Beam; Daño: 150 | PP: 5  
-Ataque 3: Earthquake; Daño: 100 | PP: 10  
-Ataque 4: Horn Attack; Daño: 65 | PP: 25  
-
-**Gyarados (Agua)**  
-Vida del Pokémon: 393  
-Defensa: 300 | Velocidad: 290  
-Ataque 1: Waterfall; Daño: 80 | PP: 15  
-Ataque 2: Bite; Daño: 60 | PP: 25  
-Ataque 3: Crunch; Daño: 80 | PP: 15  
-Ataque 4: Earthquake; Daño: 100 | PP: 10  
-
-**Magneton (Eléctrico)**  
-Vida del Pokémon: 303  
-Defensa: 280 | Velocidad: 240  
-Ataque 1: Thunderbolt; Daño: 90 | PP: 15  
-Ataque 2: Flash Cannon; Daño: 80 | PP: 10  
-Ataque 3: Tri Attack; Daño: 80 | PP: 10  
-Ataque 4: Thunder Wave; Daño: 100 | PP: 20  
-
-**Dodrio (Volador)**  
-Vida del Pokémon: 323  
-Defensa: 260 | Velocidad: 360  
-Ataque 1: Drill Peck; Daño: 80 | PP: 20  
-Ataque 2: Jump Kick; Daño: 100 | PP: 10  
-Ataque 3: Body Slam; Daño: 85 | PP: 15  
-Ataque 4: Roost; Daño: 10 | PP: 10  
-
-**Lapras (Agua)**  
-Vida del Pokémon: 463  
-Defensa: 320 | Velocidad: 220  
-Ataque 1: Ice Beam; Daño: 90 | PP: 10  
-Ataque 2: Surf; Daño: 90 | PP: 15  
-Ataque 3: Body Slam; Daño: 85 | PP: 15  
-Ataque 4: Water Gun; Daño: 40 | PP: 25  
-
-**Farfetch'd (Volador)**  
-Vida del Pokémon: 307  
-Defensa: 220 | Velocidad: 260  
-Ataque 1: Brave Bird; Daño: 120 | PP: 15  
-Ataque 2: Leaf Blade; Daño: 90 | PP: 15  
-Ataque 3: Knock Off; Daño: 65 | PP: 20  
-Ataque 4: Swords Dance; Daño: 120 | PP: 20  
-
-**Ditto (Normal)**  
-Vida del Pokémon: 299  
-Defensa: 200 | Velocidad: 200  
-Ataque 1: Pound; Daño: 40 | PP: 35  
-Ataque 2: Tackle; Daño: 40 | PP: 35  
-Ataque 3: Scratch; Daño: 40 | PP: 35  
-Ataque 4: Pound; Daño: 40 | PP: 35  
-
-**Dewgong (Hielo)**  
-Vida del Pokémon: 383  
-Defensa: 320 | Velocidad: 240  
-Ataque 1: Ice Beam; Daño: 90 | PP: 10  
-Ataque 2: Surf; Daño: 90 | PP: 15  
-Ataque 3: Rest; Daño: 90 | PP: 10  
-Ataque 4: Sheer Cold; Daño: 50 | PP: 5  
-
-**Vaporeon (Agua)**  
-Vida del Pokémon: 463  
-Defensa: 300 | Velocidad: 260  
-Ataque 1: Surf; Daño: 90 | PP: 15  
-Ataque 2: Ice Beam; Daño: 90 | PP: 10  
-Ataque 3: Aurora Beam; Daño: 65 | PP: 20  
-Ataque 4: Bite; Daño: 60 | PP: 25  
-
-**Jolteon (Eléctrico)**  
-Vida del Pokémon: 333  
-Defensa: 240 | Velocidad: 390  
-Ataque 1: Thunderbolt; Daño: 90 | PP: 15  
-Ataque 2: Double Kick; Daño: 120 | PP: 30  
-Ataque 3: Swift; Daño: 60 | PP: 20  
-Ataque 4: Shock Wave; Daño: 60 | PP: 20  
-
-**Flareon (Fuego)**  
-Vida del Pokémon: 333  
-Defensa: 280 | Velocidad: 240  
-Ataque 1: Flamethrower; Daño: 90 | PP: 15  
-Ataque 2: Bite; Daño: 60 | PP: 25  
-Ataque 3: Ember; Daño: 40 | PP: 25  
-Ataque 4: Strength; Daño: 80 | PP: 15  
-
-**Omastar (Agua)**  
-Vida del Pokémon: 343  
-Defensa: 350 | Velocidad: 200  
-Ataque 1: Ancient Power; Daño: 60 | PP: 5  
-Ataque 2: Surf; Daño: 90 | PP: 15  
-Ataque 3: Ice Beam; Daño: 90 | PP: 10  
-Ataque 4: Earth Power; Daño: 90 | PP: 10  
-
-**Hypno (Psíquico)**  
-Vida del Pokémon: 373  
-Defensa: 290 | Velocidad: 220  
-Ataque 1: Psychic; Daño: 90 | PP: 10  
-Ataque 2: Shadow Ball; Daño: 80 | PP: 15  
-Ataque 3: Hypnosis; Daño: 120 | PP: 20  
-Ataque 4: Dream Eater; Daño: 100 | PP: 15  
-
-**Onix (Roca)**  
-Vida del Pokémon: 273  
-Defensa: 400 | Velocidad: 180  
-Ataque 1: Earthquake; Daño: 100 | PP: 10  
-Ataque 2: Rock Slide; Daño: 75 | PP: 10  
-Ataque 3: Iron Tail; Daño: 100 | PP: 15  
-Ataque 4: Sandstorm; Daño: 100 | PP: 10  
-
-**Kabutops (Roca)**  
-Vida del Pokémon: 323  
-Defensa: 300 | Velocidad: 260  
-Ataque 1: Rock Slide; Daño: 75 | PP: 10  
-Ataque 2: Slash; Daño: 70 | PP: 20  
-Ataque 3: Waterfall; Daño: 80 | PP: 15  
-Ataque 4: Aqua Jet; Daño: 40 | PP: 20  
-
-**Aerodactyl (Volador)**  
-Vida del Pokémon: 363  
-Defensa: 250 | Velocidad: 390  
-Ataque 1: Rock Slide; Daño: 75 | PP: 10  
-Ataque 2: Wing Attack; Daño: 60 | PP: 35  
-Ataque 3: Hyper Beam; Daño: 150 | PP: 5  
-Ataque 4: Bite; Daño: 60 | PP: 25  
-
-**Snorlax (Normal)**  
-Vida del Pokémon: 523  
-Defensa: 320 | Velocidad: 180  
-Ataque 1: Body Slam; Daño: 85 | PP: 15  
-Ataque 2: Hyper Beam; Daño: 150 | PP: 5  
-Ataque 3: Earthquake; Daño: 100 | PP: 10  
-Ataque 4: Headbutt; Daño: 70 | PP: 15  
-
-**Articuno (Hielo)**  
-Vida del Pokémon: 383  
-Defensa: 330 | Velocidad: 290  
-Ataque 1: Ice Beam; Daño: 90 | PP: 10  
-Ataque 2: Hurricane; Daño: 110 | PP: 10  
-Ataque 3: Drill Peck; Daño: 80 | PP: 20  
-Ataque 4: Quick Attack; Daño: 40 | PP: 30  
-
-**Zapdos (Eléctrico)**  
-Vida del Pokémon: 383  
-Defensa: 300 | Velocidad: 330  
-Ataque 1: Thunderbolt; Daño: 90 | PP: 15  
-Ataque 2: Drill Peck; Daño: 80 | PP: 20  
-Ataque 3: Quick Attack; Daño: 40 | PP: 30  
-Ataque 4: Heat Wave; Daño: 95 | PP: 10  
-
-**Moltres (Fuego)**  
-Vida del Pokémon: 383  
-Defensa: 300 | Velocidad: 310  
-Ataque 1: Flamethrower; Daño: 90 | PP: 15  
-Ataque 2: Sky Attack; Daño: 140 | PP: 5  
-Ataque 3: Heat Wave; Daño: 95 | PP: 10  
-Ataque 4: Wing Attack; Daño: 60 | PP: 35  
-
-**Marowak (Tierra)**  
-Vida del Pokémon: 323  
-Defensa: 350 | Velocidad: 200  
-Ataque 1: Bonemerang; Daño: 50 | PP: 10  
-Ataque 2: Fire Punch; Daño: 75 | PP: 15  
-Ataque 3: Thunder Punch; Daño: 75 | PP: 15  
-Ataque 4: Swords Dance; Daño: 120 | PP: 20  
-
-**Dragonite (Volador)**  
-Vida del Pokémon: 385  
-Defensa: 300 | Velocidad: 284  
-Ataque 1: Dragon Claw; Daño: 80 | PP: 15  
-Ataque 2: Wing Attack; Daño: 60 | PP: 35  
-Ataque 3: Thunder Punch; Daño: 75 | PP: 15  
-Ataque 4: Ice Punch; Daño: 75 | PP: 15  
-
-**Weezing (Veneno)**  
-Vida del Pokémon: 333  
-Defensa: 340 | Velocidad: 220  
-Ataque 1: Sludge Bomb; Daño: 120 | PP: 30  
-Ataque 2: Flamethrower; Daño: 65 | PP: 10  
-Ataque 3: Thunderbolt; Daño: 50 | PP: 5  
-Ataque 4: Toxic; Daño: 90 | PP: 20  
-
-**Seadra (Agua)**  
-Vida del Pokémon: 313  
-Defensa: 280 | Velocidad: 260  
-Ataque 1: Hydro Pump; Daño: 110 | PP: 30  
-Ataque 2: Dragon Pulse; Daño: 85 | PP: 15  
-Ataque 3: Ice Beam; Daño: 90 | PP: 20  
-Ataque 4: Agility; Daño: 40 | PP: 5  
-
-**Seaking (Agua)**  
-Vida del Pokémon: 363  
-Defensa: 280 | Velocidad: 240  
-Ataque 1: Waterfall; Daño: 80 | PP: 15  
-Ataque 2: Megahorn; Daño: 120 | PP: 10  
-Ataque 3: Poison Jab; Daño: 80 | PP: 20  
-Ataque 4: Drill Run; Daño: 80 | PP: 10  
-
-**Mr. Mime (Psíquico)**  
-Vida del Pokémon: 283  
-Defensa: 260 | Velocidad: 280  
-Ataque 1: Psychic; Daño: 90 | PP: 20  
-Ataque 2: Dazzling Gleam; Daño: 80 | PP: 10  
-Ataque 3: Thunder Wave; Daño: 85 | PP: 20  
-Ataque 4: Light Screen; Daño: 120 | PP: 30  
-
-**Jynx (Psíquico)**  
-Vida del Pokémon: 333  
-Defensa: 220 | Velocidad: 330  
-Ataque 1: Ice Beam; Daño: 90 | PP: 20  
-Ataque 2: Psychic; Daño: 70 | PP: 10  
-Ataque 3: Lovely Kiss; Daño: 80 | PP: 10  
-Ataque 4: Focus Blast; Daño: 120 | PP: 40  
-
-**Porygon (Normal)**  
-Vida del Pokémon: 333  
-Defensa: 280 | Velocidad: 220  
-Ataque 1: Tri Attack; Daño: 80 | PP: 10  
-Ataque 2: Thunderbolt; Daño: 90 | PP: 15  
-Ataque 3: Ice Beam; Daño: 90 | PP: 10  
-Ataque 4: slam; Daño: 90 | PP: 10  
-
-**Mewtwo (Psíquico)**  
-Vida del Pokémon: 415  
-Defensa: 300 | Velocidad: 394  
-Ataque 1: Psychic; Daño: 90 | PP: 10  
-Ataque 2: Shadow Ball; Daño: 80 | PP: 15  
-Ataque 3: Aura Sphere; Daño: 80 | PP: 20  
-Ataque 4: Thunderbolt; Daño: 90 | PP: 15  
-
-**Mew (Psíquico)**  
-Vida del Pokémon: 403  
-Defensa: 300 | Velocidad: 320  
-Ataque 1: Psychic; Daño: 90 | PP: 10  
-Ataque 2: Shadow Ball; Daño: 80 | PP: 15  
-Ataque 3: Flamethrower; Daño: 90 | PP: 15  
-Ataque 4: Hyper Beam; Daño: 150 | PP: 5
+Venusaur
+Tipo: Planta
+Vida: 363
+Puntos: 0
+Ataque1: Razor Leaf, 55, 25
+Ataque2: Vine Whip, 45, 25
+Ataque3: Body Slam, 85, 15
+Ataque4: Giga Drain, 60, 5
+
+Charizard
+Tipo: Fuego
+Vida: 360
+Puntos: 0
+Ataque1: Lanzallamas, 90, 15
+Ataque2: Tajo aéreo, 75, 15
+Ataque3: Arañazo, 40, 35
+Ataque4: Aire afilado, 60, 25
+
+Blastoise
+Tipo: Agua
+Vida: 362
+Puntos: 0
+Ataque1: Hidrobomba, 110, 5
+Ataque2: Pistola de agua, 40, 25
+Ataque3: Bite, 60, 25
+Ataque4: Placaje, 100, 35
+
+Pidgeot
+Tipo: Volador
+Vida: 369
+Puntos: 0
+Ataque1: Wing Attack, 60, 35
+Ataque2: Quick Attack, 40, 30
+Ataque3: Tackle, 40, 35
+Ataque4: Aerial Ace, 60, 20
+
+Butterfree
+Tipo: Bicho
+Vida: 323
+Puntos: 0
+Ataque1: Tornado, 45, 15
+Ataque2: String shot, 100, 30
+Ataque3: Poison powder, 30, 25
+Ataque4: Psybeam, 65, 20
+
+Beedrill
+Tipo: Bicho
+Vida: 333
+Puntos: 0
+Ataque1: Pin missile, 45, 15
+Ataque2: String shot, 100, 30
+Ataque3: Poison sting, 30, 25
+Ataque4: Picotazo, 75, 25
+
+Pikachu
+Tipo: Eléctrico
+Vida: 273
+Puntos: 0
+Ataque1: Thunderbolt, 90, 15
+Ataque2: Quick Attack, 40, 30
+Ataque3: Slam, 80, 20
+Ataque4: Shock Wave, 60, 20
+
+Nidoqueen
+Tipo: Tierra
+Vida: 343
+Puntos: 0
+Ataque1: Earthquake, 100, 10
+Ataque2: Ice Beam, 90, 10
+Ataque3: Body Slam, 85, 15
+Ataque4: Surf, 90, 15
+
+Nidoking
+Tipo: Veneno
+Vida: 325
+Puntos: 0
+Ataque1: Earthquake, 100, 10
+Ataque2: Sludge Bomb, 90, 10
+Ataque3: Megahorn, 120, 10
+Ataque4: Thunderbolt, 90, 15
+
+Fearow
+Tipo: Volador
+Vida: 333
+Puntos: 0
+Ataque1: Ataque furia, 35, 10
+Ataque2: Ataque ala, 100, 35
+Ataque3: Pico taladro, 80, 25
+Ataque4: Derribo, 90, 30
+
+Sandslash
+Tipo: Tierra
+Vida: 353
+Puntos: 0
+Ataque1: Terremoto, 120, 45
+Ataque2: Excavar, 80, 30
+Ataque3: Danza espada, —, 20
+Ataque4: Arañazo, 40, 10
+
+Parasect
+Tipo: Bicho
+Vida: 323
+Puntos: 0
+Ataque1: Slash, 70, 20
+Ataque2: X-Scissor, 80, 15
+Ataque3: Seed Bomb, 80, 15
+Ataque4: Scratch, 40, 35
+
+Arcanine
+Tipo: Fuego
+Vida: 383
+Puntos: 0
+Ataque1: Flamethrower, 90, 15
+Ataque2: Extreme Speed, 80, 5
+Ataque3: Bite, 60, 25
+
+Alakazam
+Tipo: Psíquico
+Vida: 313
+Puntos: 0
+Ataque1: Psychic, 90, 10
+Ataque2: Psybeam, 65, 20
+Ataque3: Confusion, 50, 25
+Ataque4: Signal Beam, 75, 15
+
+Machamp
+Tipo: Lucha
+Vida: 383
+Puntos: 0
+Ataque1: Cross Chop, 100, 5
+Ataque2: Karate Chop, 50, 25
+Ataque3: Brick Break, 75, 15
+Ataque4: Vital Throw, 70, 10
+
+Clefable
+Tipo: Hada
+Vida: 393
+Puntos: 0
+Ataque1: Moonblast, 95, 15
+Ataque2: Meteor Mash, 90, 10
+Ataque3: Thunder Wave, 110, 20
+Ataque4: Soft-Boiled, 90, 10
+
+Ninetales
+Tipo: Fuego
+Vida: 349
+Puntos: 0
+Ataque1: Flamethrower, 90, 15
+Ataque2: Fire Blast, 110, 5
+Ataque3: Will-O-Wisp, 90, 15
+Ataque4: Energy Ball, 90, 10
+
+Wigglytuff
+Tipo: Hada
+Vida: 483
+Puntos: 0
+Ataque1: Hyper Voice, 90, 10
+Ataque2: Play Rough, 90, 10
+Ataque3: Thunderbolt, 90, 15
+Ataque4: Sing, 40, 15
+
+Golbat
+Tipo: Veneno
+Vida: 353
+Puntos: 0
+Ataque1: Poison Fang, 50, 15
+Ataque2: Wing Attack, 60, 35
+Ataque3: Leech Life, 80, 10
+Ataque4: Confuse Ray, 80, 10
+
+Vileplume
+Tipo: Planta
+Vida: 353
+Puntos: 0
+Ataque1: Petal Dance, 120, 30
+Ataque2: Sludge Bomb, 90, 10
+Ataque3: Solar Beam, 120, 30
+Ataque4: Sleep Powder, 100, 15
+
+Golem
+Tipo: Roca
+Vida: 363
+Puntos: 0
+Ataque1: Earthquake, 100, 10
+Ataque2: Rock Slide, 75, 10
+Ataque3: Tackle, 35, 35
+Ataque4: Double-Edge, 120, 15
+
+Rapidash
+Tipo: Fuego
+Vida: 333
+Puntos: 0
+Ataque1: Flamethrower, 90, 15
+Ataque2: Stomp, 65, 20
+Ataque3: Fire Spin, 35, 15
+Ataque4: Horn Attack, 65, 25
+
+Slowbro
+Tipo: Agua
+Vida: 393
+Puntos: 0
+Ataque1: Psychic, 90, 10
+Ataque2: Surf, 90, 15
+Ataque3: Ice Beam, 90, 10
+Ataque4: Body Slam, 85, 15
+
+Cloyster
+Tipo: Hielo
+Vida: 303
+Puntos: 0
+Ataque1: Ice Shard, 40, 30
+Ataque2: Icicle Spear, 50, 10
+Ataque3: Water Pulse, 60, 20
+Ataque4: Rock Blast, 50, 10
+
+Gengar
+Tipo: Fantasma
+Vida: 323
+Puntos: 0
+Ataque1: Shadow Ball, 80, 15
+Ataque2: Lick, 20, 30
+Ataque3: Dark Pulse, 80, 15
+Ataque4: Psychic, 90, 10
+
+Kingler
+Tipo: Agua
+Vida: 313
+Puntos: 0
+Ataque1: Crabhammer, 90, 10
+Ataque2: Vice Grip, 55, 30
+Ataque3: Slash, 70, 20
+Ataque4: Stomp, 65, 20
+
+Dugtrio
+Tipo: Tierra
+Vida: 273
+Puntos: 0
+Ataque1: Earthquake, 100, 10
+Ataque2: Rock Slide, 75, 10
+Ataque3: Sucker Punch, 70, 5
+Ataque4: Sand Attack, 110, 15
+
+Venomoth
+Tipo: Bicho
+Vida: 343
+Puntos: 0
+Ataque1: Bug Buzz, 90, 10
+Ataque2: Psychic, 90, 10
+Ataque3: Sleep Powder, 100, 15
+Ataque4: Quiver Dance, 140, 25
+
+Persian
+Tipo: Normal
+Vida: 333
+Puntos: 0
+Ataque1: Slash, 70, 20
+Ataque2: Power Gem, 80, 20
+Ataque3: Fake Out, 40, 10
+Ataque4: Taunt, 90, 20
+
+Golduck
+Tipo: Agua
+Vida: 363
+Puntos: 0
+Ataque1: Hydro Pump, 110, 5
+Ataque2: Psychic, 90, 10
+Ataque3: Ice Beam, 90, 10
+Ataque4: Confuse Ray, 80, 10
+
+Primeape
+Tipo: Lucha
+Vida: 333
+Puntos: 0
+Ataque1: Close Combat, 120, 5
+Ataque2: Earthquake, 100, 10
+Ataque3: Rock Slide, 75, 10
+Ataque4: U-turn, 70, 20
+
+Electrode
+Tipo: Eléctrico
+Vida: 323
+Puntos: 0
+Ataque1: Thunderbolt, 90, 15
+Ataque2: Explosion, 250, 5
+Ataque3: Swift, 60, 20
+Ataque4: Tackle, 40, 35
+
+Exeggutor
+Tipo: Planta
+Vida: 393
+Puntos: 0
+Ataque1: Psychic, 90, 10
+Ataque2: Seed Bomb, 80, 15
+Ataque3: Body Slam, 85, 15
+Ataque4: Stomp, 65, 20
+
+Hitmonlee
+Tipo: Lucha
+Vida: 303
+Puntos: 0
+Ataque1: High Jump Kick, 130, 10
+Ataque2: Brick Break, 75, 15
+Ataque3: Rolling Kick, 60, 15
+Ataque4: Double Kick, 60, 30
+
+Hitmonchan
+Tipo: Lucha
+Vida: 303
+Puntos: 0
+Ataque1: Fire Punch, 75, 15
+Ataque2: Ice Punch, 75, 15
+Ataque3: Thunder Punch, 75, 15
+Ataque4: Mach Punch, 40, 30
+
+Rhydon
+Tipo: Tierra
+Vida: 413
+Puntos: 0
+Ataque1: Earthquake, 100, 10
+Ataque2: Rock Slide, 75, 10
+Ataque3: Horn Attack, 65, 25
+Ataque4: Double-Edge, 120, 15
+
+Poliwrath
+Tipo: Agua
+Vida: 383
+Puntos: 0
+Ataque1: Dynamic Punch, 100, 5
+Ataque2: Waterfall, 80, 15
+Ataque3: Ice Punch, 75, 15
+Ataque4: Bulk Up, 100, 20
+
+Kangaskhan
+Tipo: Normal
+Vida: 413
+Puntos: 0
+Ataque1: Dizzy Punch, 70, 10
+Ataque2: Crunch, 80, 15
+Ataque3: Stomp, 65, 20
+Ataque4: Brick Break, 75, 15
+
+Starmie
+Tipo: Agua
+Vida: 323
+Puntos: 0
+Ataque1: Psychic, 90, 10
+Ataque2: Surf, 90, 15
+Ataque3: Thunderbolt, 90, 15
+Ataque4: Rapid Spin, 50, 40
+
+Scyther
+Tipo: Bicho
+Vida: 343
+Puntos: 0
+Ataque1: Wing Attack, 60, 35
+Ataque2: Slash, 70, 20
+Ataque3: X-Scissor, 80, 15
+Ataque4: Fury Cutter, 40, 20
+
+Victreebel
+Tipo: Planta
+Vida: 363
+Puntos: 0
+Ataque1: Leaf Blade, 90, 15
+Ataque2: Sludge Bomb, 90, 10
+Ataque3: Solar Beam, 120, 10
+Ataque4: Sleep Powder, 100, 15
+
+Tentacruel
+Tipo: Agua
+Vida: 363
+Puntos: 0
+Ataque1: Surf, 90, 15
+Ataque2: Sludge Wave, 95, 10
+Ataque3: Barrier, 100, 20
+Ataque4: Poison Jab, 80, 20
+
+Electabuzz
+Tipo: Eléctrico
+Vida: 333
+Puntos: 0
+Ataque1: Thunderbolt, 90, 15
+Ataque2: Thunder Punch, 75, 15
+Ataque3: Swift, 60, 20
+Ataque4: Low Kick, 60, 25
+
+Magmar
+Tipo: Fuego
+Vida: 333
+Puntos: 0
+Ataque1: Flamethrower, 90, 15
+Ataque2: Fire Punch, 75, 15
+Ataque3: Ember, 40, 25
+Ataque4: Brick Break, 75, 15
+
+Pinsir
+Tipo: Bicho
+Vida: 333
+Puntos: 0
+Ataque1: X-Scissor, 80, 15
+Ataque2: Vice Grip, 55, 30
+Ataque3: Seismic Toss, 60, 20
+Ataque4: Rock Slide, 75, 10
+
+Tauros
+Tipo: Normal
+Vida: 353
+Puntos: 0
+Ataque1: Body Slam, 85, 15
+Ataque2: Hyper Beam, 150, 5
+Ataque3: Earthquake, 100, 10
+Ataque4: Horn Attack, 65, 25
+
+Gyarados
+Tipo: Agua
+Vida: 393
+Puntos: 0
+Ataque1: Waterfall, 80, 15
+Ataque2: Bite, 60, 25
+Ataque3: Crunch, 80, 15
+Ataque4: Earthquake, 100, 10
+
+Magneton
+Tipo: Eléctrico
+Vida: 303
+Puntos: 0
+Ataque1: Thunderbolt, 90, 15
+Ataque2: Flash Cannon, 80, 10
+Ataque3: Tri Attack, 80, 10
+Ataque4: Thunder Wave, 100, 20
+
+Dodrio
+Tipo: Volador
+Vida: 323
+Puntos: 0
+Ataque1: Drill Peck, 80, 20
+Ataque2: Jump Kick, 100, 10
+Ataque3: Body Slam, 85, 15
+Ataque4: Roost, 10, 10
+
+Lapras
+Tipo: Agua
+Vida: 463
+Puntos: 0
+Ataque1: Ice Beam, 90, 10
+Ataque2: Surf, 90, 15
+Ataque3: Body Slam, 85, 15
+Ataque4: Water Gun, 40, 25
+
+Farfetch'd
+Tipo: Volador
+Vida: 307
+Puntos: 0
+Ataque1: Brave Bird, 120, 15
+Ataque2: Leaf Blade, 90, 15
+Ataque3: Knock Off, 65, 20
+Ataque4: Swords Dance, 120, 20
+
+Ditto
+Tipo: Normal
+Vida: 299
+Puntos: 0
+Ataque1: Pound, 40, 35
+Ataque2: Tackle, 40, 35
+Ataque3: Scratch, 40, 35
+Ataque4: Pound, 40, 35
+
+Dewgong
+Tipo: Hielo
+Vida: 383
+Puntos: 0
+Ataque1: Ice Beam, 90, 10
+Ataque2: Surf, 90, 15
+Ataque3: Rest, 90, 10
+Ataque4: Sheer Cold, 50, 5
+
+Vaporeon
+Tipo: Agua
+Vida: 463
+Puntos: 0
+Ataque1: Surf, 90, 15
+Ataque2: Ice Beam, 90, 10
+Ataque3: Aurora Beam, 65, 20
+Ataque4: Bite, 60, 25
+
+Jolteon
+Tipo: Eléctrico
+Vida: 333
+Puntos: 0
+Ataque1: Thunderbolt, 90, 15
+Ataque2: Double Kick, 120, 30
+Ataque3: Swift, 60, 20
+Ataque4: Shock Wave, 60, 20
+
+Flareon
+Tipo: Fuego
+Vida: 333
+Puntos: 0
+Ataque1: Flamethrower, 90, 15
+Ataque2: Bite, 60, 25
+Ataque3: Ember, 40, 25
+Ataque4: Strength, 80, 15
+
+Omastar
+Tipo: Agua
+Vida: 343
+Puntos: 0
+Ataque1: Ancient Power, 60, 5
+Ataque2: Surf, 90, 15
+Ataque3: Ice Beam, 90, 10
+Ataque4: Earth Power, 90, 10
+
+Hypno
+Tipo: Psíquico
+Vida: 373
+Puntos: 0
+Ataque1: Psychic, 90, 10
+Ataque2: Shadow Ball, 80, 15
+Ataque3: Hypnosis, 120, 20
+Ataque4: Dream Eater, 100, 15
+
+Onix
+Tipo: Roca
+Vida: 273
+Puntos: 0
+Ataque1: Earthquake, 100, 10
+Ataque2: Rock Slide, 75, 10
+Ataque3: Iron Tail, 100, 15
+Ataque4: Sandstorm, 100, 10
+
+Kabutops
+Tipo: Roca
+Vida: 323
+Puntos: 0
+Ataque1: Rock Slide, 75, 10
+Ataque2: Slash, 70, 20
+Ataque3: Waterfall, 80, 15
+Ataque4: Aqua Jet, 40, 20
+
+Aerodactyl
+Tipo: Volador
+Vida: 363
+Puntos: 0
+Ataque1: Rock Slide, 75, 10
+Ataque2: Wing Attack, 60, 35
+Ataque3: Hyper Beam, 150, 5
+Ataque4: Bite, 60, 25
+
+Snorlax
+Tipo: Normal
+Vida: 523
+Puntos: 0
+Ataque1: Body Slam, 85, 15
+Ataque2: Hyper Beam, 150, 5
+Ataque3: Earthquake, 100, 10
+Ataque4: Headbutt, 70, 15
+
+Articuno
+Tipo: Hielo
+Vida: 383
+Puntos: 0
+Ataque1: Ice Beam, 90, 10
+Ataque2: Hurricane, 110, 10
+Ataque3: Drill Peck, 80, 20
+Ataque4: Quick Attack, 40, 30
+
+Zapdos
+Tipo: Eléctrico
+Vida: 383
+Puntos: 0
+Ataque1: Thunderbolt, 90, 15
+Ataque2: Drill Peck, 80, 20
+Ataque3: Quick Attack, 40, 30
+Ataque4: Heat Wave, 95, 10
+
+Moltres
+Tipo: Fuego
+Vida: 383
+Puntos: 0
+Ataque1: Flamethrower, 90, 15
+Ataque2: Sky Attack, 140, 5
+Ataque3: Heat Wave, 95, 10
+Ataque4: Wing Attack, 60, 35
+
+Marowak
+Tipo: Tierra
+Vida: 323
+Puntos: 0
+Ataque1: Bonemerang, 50, 10
+Ataque2: Fire Punch, 75, 15
+Ataque3: Thunder Punch, 75, 15
+Ataque4: Swords Dance, 120, 20
+
+Dragonite
+Tipo: Volador
+Vida: 385
+Puntos: 0
+Ataque1: Dragon Claw, 80, 15
+Ataque2: Wing Attack, 60, 35
+Ataque3: Thunder Punch, 75, 15
+Ataque4: Ice Punch, 75, 15
+
+Weezing
+Tipo: Veneno
+Vida: 333
+Puntos: 0
+Ataque1: Sludge Bomb, 120, 30
+Ataque2: Flamethrower, 65, 10
+Ataque3: Thunderbolt, 50, 5
+Ataque4: Toxic, 90, 20
+
+Seadra
+Tipo: Agua
+Vida: 313
+Puntos: 0
+Ataque1: Hydro Pump, 110, 30
+Ataque2: Dragon Pulse, 85, 15
+Ataque3: Ice Beam, 90, 20
+Ataque4: Agility, 40, 5
+
+Seaking
+Tipo: Agua
+Vida: 363
+Puntos: 0
+Ataque1: Waterfall, 80, 15
+Ataque2: Megahorn, 120, 10
+Ataque3: Poison Jab, 80, 20
+Ataque4: Drill Run, 80, 10
+
+Mr. Mime
+Tipo: Psíquico
+Vida: 283
+Puntos: 0
+Ataque1: Psychic, 90, 20
+Ataque2: Dazzling Gleam, 80, 10
+Ataque3: Thunder Wave, 85, 20
+Ataque4: Light Screen, 120, 30
+
+Jynx
+Tipo: Psíquico
+Vida: 333
+Puntos: 0
+Ataque1: Ice Beam, 90, 20
+Ataque2: Psychic, 70, 10
+Ataque3: Lovely Kiss, 80, 10
+Ataque4: Focus Blast, 120, 40
+
+Porygon
+Tipo: Normal
+Vida: 333
+Puntos: 0
+Ataque1: Tri Attack, 80, 10
+Ataque2: Thunderbolt, 90, 15
+Ataque3: Ice Beam, 90, 10
+Ataque4: slam, 90, 10
+
+Mewtwo
+Tipo: Psíquico
+Vida: 415
+Puntos: 0
+Ataque1: Psychic, 90, 10
+Ataque2: Shadow Ball, 80, 15
+Ataque3: Aura Sphere, 80, 20
+Ataque4: Thunderbolt, 90, 15
+
+Mew
+Tipo: Psíquico
+Vida: 403
+Puntos: 0
+Ataque1: Psychic, 90, 10
+Ataque2: Shadow Ball, 80, 15
+Ataque3: Flamethrower, 90, 15
+Ataque4: Hyper Beam, 150, 5
