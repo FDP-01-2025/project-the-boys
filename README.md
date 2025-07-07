@@ -16,12 +16,13 @@ Este proyecto es un juego desarollado en c++ basado en la popular franquicia de 
 ### Integrantes del equipo
 
 1. **Nombre completo:** Jonathan Josué Molina Romero
+
    **Carnet:** 00141225
 
-2. **Nombre completo:** Gianfranco Xavier Miranda Hernández  
+3. **Nombre completo:** Gianfranco Xavier Miranda Hernández  
    **Carnet:** 00059425
 
-3. **Nombre completo:** [Nombre del estudiante 3]  
+4. **Nombre completo:** [Nombre del estudiante 3]  
    **Carnet:** [Carnet del estudiante 3]
 
 (Agregar más integrantes si es necesario)
