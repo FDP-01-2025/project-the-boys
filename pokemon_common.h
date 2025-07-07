@@ -6,8 +6,6 @@
 #include <sstream>
 #include <vector>
 #include <string>
-#include <cstdlib>
-#include <ctime>
 #include <map>
 #include <algorithm>
 #include <cctype>
@@ -186,7 +184,6 @@ inline void aplicarDanio(Pokemon &atacante, Pokemon &defensor, Ataque ataque)
     }
 }
 
-
 inline string trim(const string& s) {
     size_t first = s.find_first_not_of(" \t\n\r");
     if (first == string::npos) return "";
@@ -194,9 +191,18 @@ inline string trim(const string& s) {
     return s.substr(first, (last - first + 1));
 }
 
-
 inline bool esNumero(const string& s) {
     return !s.empty() && all_of(s.begin(), s.end(), ::isdigit);
+}
+
+inline int stringAInt(const string& s) {
+    istringstream iss(s);
+    int valor = 0;
+    iss >> valor;
+    if (iss.fail()) {
+        return 0;
+    }
+    return valor;
 }
 
 vector<Pokemon> leerPokemons(const string &archivoNombre)
@@ -225,13 +231,13 @@ vector<Pokemon> leerPokemons(const string &archivoNombre)
         }
         else if (linea.find("Tipo:") == 0)
         {
-            p.Tipo = trim(linea.substr(5 + 1)); // después de "Tipo:"
+            p.Tipo = trim(linea.substr(5 + 1));
         }
         else if (linea.find("Vida:") == 0)
         {
-            string valor = trim(linea.substr(5 + 1)); // después de "Vida:"
+            string valor = trim(linea.substr(5 + 1));
             if (esNumero(valor)) {
-                p.Vida = stoi(valor);
+                p.Vida = stringAInt(valor);
                 p.VidaMaxima = p.Vida;
             } else {
                 cerr << "Error: Vida no es un número válido: '" << valor << "'" << endl;
@@ -240,9 +246,9 @@ vector<Pokemon> leerPokemons(const string &archivoNombre)
         }
         else if (linea.find("Puntos:") == 0)
         {
-            string valor = trim(linea.substr(7 + 1)); // después de "Puntos:"
+            string valor = trim(linea.substr(7 + 1));
             if (esNumero(valor)) {
-                p.Puntos = stoi(valor);
+                p.Puntos = stringAInt(valor);
             } else {
                 cerr << "Error: Puntos no es un número válido: '" << valor << "'" << endl;
                 p.Puntos = 0;
@@ -262,8 +268,8 @@ vector<Pokemon> leerPokemons(const string &archivoNombre)
                 string ppStr = trim(resto.substr(pos3 + 1));
 
                 p.Ataques[ataqueIndex].nombre = nombre;
-                p.Ataques[ataqueIndex].danio = esNumero(danioStr) ? stoi(danioStr) : 0;
-                p.Ataques[ataqueIndex].pp = esNumero(ppStr) ? stoi(ppStr) : 0;
+                p.Ataques[ataqueIndex].danio = esNumero(danioStr) ? stringAInt(danioStr) : 0;
+                p.Ataques[ataqueIndex].pp = esNumero(ppStr) ? stringAInt(ppStr) : 0;
                 ataqueIndex++;
             } else {
                 cerr << "Error en formato de ataque: '" << linea << "'" << endl;
