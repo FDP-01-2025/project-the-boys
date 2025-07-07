@@ -11,8 +11,8 @@
 using namespace std;
 
 struct TempJugador {
-    double incrementoVida = 1.2;
-    double incrementoAtaque = 1.5; 
+    double incrementoVida = 1.5;
+    double incrementoAtaque = 1.8; 
 
     void subirStats(Pokemon& p) {
         p.Vida = static_cast<int>(p.Vida * incrementoVida);
