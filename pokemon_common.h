@@ -9,6 +9,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <map>
+#include <algorithm>
+#include <cctype>
 
 using namespace std;
 
@@ -184,6 +186,19 @@ inline void aplicarDanio(Pokemon &atacante, Pokemon &defensor, Ataque ataque)
     }
 }
 
+
+inline string trim(const string& s) {
+    size_t first = s.find_first_not_of(" \t\n\r");
+    if (first == string::npos) return "";
+    size_t last = s.find_last_not_of(" \t\n\r");
+    return s.substr(first, (last - first + 1));
+}
+
+
+inline bool esNumero(const string& s) {
+    return !s.empty() && all_of(s.begin(), s.end(), ::isdigit);
+}
+
 vector<Pokemon> leerPokemons(const string &archivoNombre)
 {
     ifstream archivo(archivoNombre);
@@ -194,9 +209,11 @@ vector<Pokemon> leerPokemons(const string &archivoNombre)
 
     while (getline(archivo, linea))
     {
+        linea = trim(linea);
         if (linea.empty())
         {
-            lista.push_back(p);
+            if (!p.Nombre.empty())
+                lista.push_back(p);
             p = Pokemon();
             ataqueIndex = 0;
             continue;
@@ -208,28 +225,49 @@ vector<Pokemon> leerPokemons(const string &archivoNombre)
         }
         else if (linea.find("Tipo:") == 0)
         {
-            p.Tipo = linea.substr(6);
+            p.Tipo = trim(linea.substr(5 + 1)); // después de "Tipo:"
         }
         else if (linea.find("Vida:") == 0)
         {
-            p.Vida = stoi(linea.substr(6));
-            p.VidaMaxima = p.Vida;
+            string valor = trim(linea.substr(5 + 1)); // después de "Vida:"
+            if (esNumero(valor)) {
+                p.Vida = stoi(valor);
+                p.VidaMaxima = p.Vida;
+            } else {
+                cerr << "Error: Vida no es un número válido: '" << valor << "'" << endl;
+                p.Vida = p.VidaMaxima = 0;
+            }
         }
         else if (linea.find("Puntos:") == 0)
         {
-            p.Puntos = stoi(linea.substr(8));
+            string valor = trim(linea.substr(7 + 1)); // después de "Puntos:"
+            if (esNumero(valor)) {
+                p.Puntos = stoi(valor);
+            } else {
+                cerr << "Error: Puntos no es un número válido: '" << valor << "'" << endl;
+                p.Puntos = 0;
+            }
         }
         else if (linea.find("Ataque") == 0)
         {
-            size_t pos1 = linea.find(":") + 2;
-            size_t pos2 = linea.find(",", pos1);
-            size_t pos3 = linea.find(",", pos2 + 1);
+            size_t pos1 = linea.find(":");
+            if (pos1 == string::npos) continue;
+            string resto = trim(linea.substr(pos1 + 1));
+            size_t pos2 = resto.find(",");
+            size_t pos3 = resto.find(",", pos2 + 1);
 
-            p.Ataques[ataqueIndex].nombre = linea.substr(pos1, pos2 - pos1);
-            p.Ataques[ataqueIndex].danio = stoi(linea.substr(pos2 + 1, pos3 - pos2 - 1));
-            p.Ataques[ataqueIndex].pp = stoi(linea.substr(pos3 + 1));
+            if (pos2 != string::npos && pos3 != string::npos) {
+                string nombre = trim(resto.substr(0, pos2));
+                string danioStr = trim(resto.substr(pos2 + 1, pos3 - pos2 - 1));
+                string ppStr = trim(resto.substr(pos3 + 1));
 
-            ataqueIndex++;
+                p.Ataques[ataqueIndex].nombre = nombre;
+                p.Ataques[ataqueIndex].danio = esNumero(danioStr) ? stoi(danioStr) : 0;
+                p.Ataques[ataqueIndex].pp = esNumero(ppStr) ? stoi(ppStr) : 0;
+                ataqueIndex++;
+            } else {
+                cerr << "Error en formato de ataque: '" << linea << "'" << endl;
+            }
         }
     }
 

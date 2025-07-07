@@ -89,12 +89,15 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
         usuario.vivo = true;
         enemigo.vivo = true;
 
+        bool usuarioSobrevive = true;
+
         while (usuario.vivo && enemigo.vivo) {
             aplicarEfectos(usuario);
             aplicarEfectos(enemigo);
 
             if (usuario.Vida <= 0) {
                 cout << usuario.Nombre << " fue debilitado por los efectos.\n";
+                usuarioSobrevive = false;
                 break;
             }
             if (enemigo.Vida <= 0) {
@@ -141,23 +144,31 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
             cout << enemigo.Nombre << " uso " << enemigo.Ataques[ataqueEnemigo].nombre << " causando " << danio << " de da\u00f1o!\n";
 
             if (usuario.Vida <= 0) {
-                cout << usuario.Nombre << " fue debilitado. Perdiste el torneo.\n";
-                return;
+                cout << usuario.Nombre << " fue debilitado. ";
+                usuarioSobrevive = false;
+                cout << "¡Perdiste este combate!\n";
+                break;
             }
         }
-        
-        
-        tempJugador.subirStats(usuario);
-        cout << usuario.Nombre << " ahora tiene Vida: " << usuario.Vida << "\n";
+
+        if (usuarioSobrevive) {
+            tempJugador.subirStats(usuario);
+            cout << usuario.Nombre << " ahora tiene Vida: " << usuario.Vida << "\n";
+            pokemonsUsuario.push_back(usuario);
+        } else {
+            cout << "Te quedan " << pokemonsUsuario.size() << " Pokemones para seguir el torneo.\n";
+        }
 
         for (auto& e : pokemonsEnemigos) {
             tempBot.subirStats(e);
         }
 
-        pokemonsUsuario.push_back(usuario);
+        if (pokemonsUsuario.empty()) {
+            cout << "¡Todos tus Pokémon han sido derrotados! Fin del torneo.\n";
+            break;
+        }
 
         cout << "\u00a1Prep\u00e1rate para la pr\u00f3xima ronda!\n";
-    
     }
 }
 
