@@ -39,9 +39,11 @@ int calcularDanio(const Ataque& atk, const Pokemon& defensor) {
 
 Pokemon seleccionarPokemonUsuario(vector<Pokemon>& pokemons) {
     cout << "\nSelecciona tu Pokemon:\n";
-    for (size_t i = 0; i < pokemons.size(); ++i) {
-        cout << i + 1 << ". " << pokemons[i].Nombre << " (Vida: " << pokemons[i].Vida << ")\n";
-    }
+for (size_t i = 0; i < pokemons.size(); ++i) {
+    cout << i + 1 << ". " << pokemons[i].Nombre << " "
+         << colorTipo(pokemons[i].Tipo)
+         << " (Vida: " << pokemons[i].Vida << ")" << endl;
+}
     int eleccion;
     do {
         cout << "Opcion: ";
@@ -84,7 +86,7 @@ void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemi
         Pokemon usuario = seleccionarPokemonUsuario(pokemonsUsuario);
         Pokemon enemigo = seleccionarPokemonRandom(pokemonsEnemigos);
 
-        cout << "Tu Pok\u00e9mon: " << usuario.Nombre << " vs Enemigo: " << enemigo.Nombre << "\n";
+        cout << "Tu Pok\u00e9mon: " << usuario.Nombre << " vs Enemigo: " << enemigo.Nombre << " " << colorTipo(enemigo.Tipo) << "\n";
 
         usuario.vivo = true;
         enemigo.vivo = true;

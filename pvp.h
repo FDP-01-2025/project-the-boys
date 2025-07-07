@@ -3,20 +3,24 @@
 
 #include "pokemon_common.h"
 #include <limits>
-#include <cstdlib> // Para rand
-#include <ctime>   // Para time
+#include <cstdlib>
+#include <ctime>
 
-int calcularDanio(int danioBase, int defensa) {
+// Cálculo de daño según defensa
+inline int calcularDanio(int danioBase, int defensa) {
     int danioFinal = danioBase - (defensa / 4);
     return (danioFinal < 1) ? 1 : danioFinal;
 }
 
-vector<Pokemon> seleccionarPokemonsUsuario(vector<Pokemon>& pokemons, int cantidad) {
+// Selección de pokemons por el usuario
+inline vector<Pokemon> seleccionarPokemonsUsuario(vector<Pokemon>& pokemons, int cantidad) {
     vector<Pokemon> seleccionados;
     for (int i = 0; i < cantidad; ++i) {
         cout << "\nSelecciona el Pokémon #" << (i + 1) << ":\n";
         for (size_t j = 0; j < pokemons.size(); ++j) {
-            cout << j + 1 << ". " << pokemons[j].Nombre << " (Vida: " << pokemons[j].Vida << ")\n";
+            cout << j + 1 << ". " << pokemons[j].Nombre << " "
+                 << colorTipo(pokemons[j].Tipo)
+                 << " (Vida: " << pokemons[j].Vida << ")" << endl;
         }
         int eleccion;
         do {
@@ -38,10 +42,10 @@ vector<Pokemon> seleccionarPokemonsUsuario(vector<Pokemon>& pokemons, int cantid
     return seleccionados;
 }
 
-
-void batallaPvP(vector<Pokemon> equipo1, vector<Pokemon> equipo2) {
+// Lógica principal de batalla PvP
+inline void batallaPvP(vector<Pokemon> equipo1, vector<Pokemon> equipo2) {
     int idx1 = 0, idx2 = 0;
-    srand(time(0));
+    srand(static_cast<unsigned>(time(0)));
 
     while (idx1 < (int)equipo1.size() && idx2 < (int)equipo2.size()) {
         Pokemon& jugador = equipo1[idx1];
@@ -70,7 +74,7 @@ void batallaPvP(vector<Pokemon> equipo1, vector<Pokemon> equipo2) {
             Pokemon& atacante = (turno == 0) == jugadorVaPrimero ? jugador : rival;
             Pokemon& defensor = (turno == 0) == jugadorVaPrimero ? rival : jugador;
 
-            cout << "\nTurno de " << (atacante.Nombre) << " - Ataques disponibles:\n";
+            cout << "\nTurno de " << atacante.Nombre << " - Ataques disponibles:\n";
             for (int i = 0; i < 4; ++i) {
                 cout << i + 1 << ". " << atacante.Ataques[i].nombre << " (Dano: " << atacante.Ataques[i].danio
                      << ", PP: " << atacante.Ataques[i].pp << ")\n";

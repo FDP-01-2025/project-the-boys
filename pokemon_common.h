@@ -205,6 +205,26 @@ inline int stringAInt(const string& s) {
     return valor;
 }
 
+
+inline std::string colorTipo(const std::string& tipo) {
+    if (tipo == "Agua") return "\033[34m" + tipo + "\033[0m";
+    if (tipo == "Fuego") return "\033[31m" + tipo + "\033[0m";
+    if (tipo == "Planta") return "\033[32m" + tipo + "\033[0m";
+    if (tipo == "Eléctrico" || tipo == "Electrico") return "\033[33m" + tipo + "\033[0m";
+    if (tipo == "Hielo") return "\033[36m" + tipo + "\033[0m";
+    if (tipo == "Lucha") return "\033[91m" + tipo + "\033[0m";
+    if (tipo == "Veneno") return "\033[32m" + tipo + "\033[0m";       
+    if (tipo == "Tierra") return "\033[33m" + tipo + "\033[0m";
+    if (tipo == "Volador") return "\033[94m" + tipo + "\033[0m";
+    if (tipo == "Psíquico" || tipo == "Psiquico") return "\033[95m" + tipo + "\033[0m";
+    if (tipo == "Bicho") return "\033[92m" + tipo + "\033[0m";
+    if (tipo == "Roca") return "\033[33m" + tipo + "\033[0m";    
+    if (tipo == "Fantasma") return "\033[95m" + tipo + "\033[0m";
+    if (tipo == "Dragón" || tipo == "Dragon") return "\033[34m" + tipo + "\033[0m";
+    if (tipo == "Normal") return "\033[37m" + tipo + "\033[0m";
+    return tipo;
+}
+
 vector<Pokemon> leerPokemons(const string &archivoNombre)
 {
     ifstream archivo(archivoNombre);
