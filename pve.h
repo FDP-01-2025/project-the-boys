@@ -292,6 +292,14 @@ inline Pokemon seleccionarPokemonRandom(const vector<Pokemon>& pokemons) {
     return pokemons[idx];
 }
 
+inline int calcularPrecisionPorDanio(int danio) {
+    const int MAX_DANIO = 120;
+    const int MIN_PRECISION = 50;
+    int precision = 100 - (danio * 50 / MAX_DANIO);
+    if (precision < MIN_PRECISION) precision = MIN_PRECISION;
+    return precision;
+    }
+
 // --- La batalla principal PvE ---
 inline void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemigos) {
     crearMochilaSiNoExiste();
@@ -374,6 +382,7 @@ inline void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemo
                 Ataque& ataque = atacante.Ataques[idxAtaque];
                 ataque.pp--;
 
+                ataque.precision = calcularPrecisionPorDanio(ataque.danio);
                 // Precision
                 if (!ataqueAcierta(ataque.precision)) {
                     cout << atacante.Nombre << " fallo el ataque!\n";
