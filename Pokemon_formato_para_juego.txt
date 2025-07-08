@@ -173,7 +173,7 @@ Ataque2: Meteor Mash,90,20
 Ataque3: Thunder Wave,110,25
 Ataque4: Soft-Boiled,90,20
 
-Wigglytuff
+Jigglypuff
 Tipo: Hada
 Vida: 483
 Puntos: 100
