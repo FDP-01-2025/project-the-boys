@@ -9,14 +9,6 @@
 
 using namespace std; 
 
-inline int calcularPrecisionPorDanio(int danio) {
-    const int MAX_DANIO = 120;
-    const int MIN_PRECISION = 50;
-    int precision = 100 - (danio * 50 / MAX_DANIO);
-    if (precision < MIN_PRECISION) precision = MIN_PRECISION;
-    return precision;
-}
-
 // Logica principal de batalla PvP
 inline void batallaPvP(vector<Pokemon> equipo1, vector<Pokemon> equipo2) {
     int idx1 = 0, idx2 = 0;
@@ -64,8 +56,6 @@ inline void batallaPvP(vector<Pokemon> equipo1, vector<Pokemon> equipo2) {
 
             atacante.Ataques[ataque - 1].pp--;
 
-            ataque.precision = calcularPrecisionPorDanio(ataque.danio);
-            
             // Precision
             if (!ataqueAcierta(atacante.Ataques[ataque - 1].precision)) {
                 cout << atacante.Nombre << " fallo el ataque!\n";

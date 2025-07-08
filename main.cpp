@@ -3,6 +3,7 @@
 #include "pokemon_common.h"
 #include "pvp.h"
 #include "pve.h"
+#include "ASCII.h"
 
 using namespace std;
 
