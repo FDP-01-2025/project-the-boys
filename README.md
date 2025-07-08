@@ -22,8 +22,8 @@ Este proyecto es un juego desarollado en c++ basado en la popular franquicia de 
 3. **Nombre completo:** Gianfranco Xavier Miranda Hernández  
    **Carnet:** 00059425
 
-4. **Nombre completo:** [Nombre del estudiante 3]  
-   **Carnet:** [Carnet del estudiante 3]
+4. **Nombre completo:** Víctor Alejandro Huezo Guzmán 
+   **Carnet:** 00031725
 
 (Agregar más integrantes si es necesario)
 
