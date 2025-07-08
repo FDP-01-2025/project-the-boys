@@ -16,7 +16,7 @@ Puntos: 100
 Defensa: 293
 Velocidad: 328
 Ataque1: Lanzallamas,90,20
-Ataque2: Tajo aéreo,75,15
+Ataque2: Tajo aereo,75,15
 Ataque3: Arañazo,40,5
 Ataque4: Aire afilado,60,10
 

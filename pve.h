@@ -4,14 +4,13 @@
 #include "pokemon_common.h"
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <string>
+#include <regex>
+#include <sys/stat.h>
 #include <cstdlib>
 #include <ctime>
 #include <limits>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <regex>
-#include <sys/stat.h>
 
 using namespace std;
 
@@ -49,7 +48,39 @@ inline void guardarMochila(const string& archivo, const vector<string>& objetos)
     }
 }
 
-// Muestra la mochila y devuelve el indice elegido por el usuario (o -1 si cancela)
+inline int contarObjetoEnMochila(const vector<string>& mochila, const string& nombreObjeto) {
+    int contador = 0;
+    for (const auto& obj : mochila)
+        if (obj.find(nombreObjeto) != string::npos)
+            contador++;
+    return contador;
+}
+
+inline void agregarObjetoAMochila(vector<string>& mochila, const string& objeto) {
+    mochila.push_back(objeto);
+    guardarMochila("Mochila.txt", mochila);
+}
+
+inline void darObjetosPorRonda(vector<string>& mochila, int ronda, bool ganoRonda) {
+    if (ronda % 5 == 0) {
+        if (contarObjetoEnMochila(mochila, "Revive") == 0) {
+            agregarObjetoAMochila(mochila, "Revive (revives a pokemon with half its hp)");
+            cout << "Recibiste un Revive!\n";
+        }
+        if (contarObjetoEnMochila(mochila, "Large potion") == 0) {
+            agregarObjetoAMochila(mochila, "Large potion (heals all hp)");
+            cout << "Recibiste una Large potion!\n";
+        }
+    }
+    if (ganoRonda) {
+        agregarObjetoAMochila(mochila, "Small potion (heals 20 hp)");
+        agregarObjetoAMochila(mochila, "Small potion (heals 20 hp)");
+        agregarObjetoAMochila(mochila, "Medium potion (heals 100 hp)");
+        agregarObjetoAMochila(mochila, "Medium potion (heals 100 hp)");
+        cout << "Recibiste 2 Small potion y 2 Medium potion!\n";
+    }
+}
+
 inline int mostrarMochila(const vector<string>& objetos) {
     cout << "\n--- Mochila ---" << endl;
     if (objetos.empty()) {
@@ -75,7 +106,6 @@ inline int mostrarMochila(const vector<string>& objetos) {
     return opcion - 1;
 }
 
-// Elige un Pokemon objetivo (puede estar vivo o muerto si revive)
 inline int elegirPokemonObjetivo(const vector<Pokemon>& equipo, bool paraRevive) {
     cout << "\nElige el Pokemon ";
     if (paraRevive)
@@ -119,7 +149,6 @@ inline int elegirPokemonObjetivo(const vector<Pokemon>& equipo, bool paraRevive)
     return indicesValidos[eleccion - 1];
 }
 
-// Extrae puntos de cura de la descripcion del objeto
 inline int puntosDeCura(const string& objeto) {
     smatch m;
     regex exp("\\b(\\d+)\\s*hp\\b", regex::icase);
@@ -131,8 +160,8 @@ inline int puntosDeCura(const string& objeto) {
     return 0;
 }
 
-// Aplica el efecto del objeto y devuelve true si se uso, false si no
-inline bool usarObjetoMochila(const string& objeto, vector<Pokemon>& equipo) {
+inline bool usarObjetoMochila(const string& objeto, vector<Pokemon>& equipo, bool &fueRevivirSinDebilitados) {
+    fueRevivirSinDebilitados = false;
     if (objeto.find("potion") != string::npos) {
         int puntos = puntosDeCura(objeto);
         int idx = elegirPokemonObjetivo(equipo, false);
@@ -153,6 +182,18 @@ inline bool usarObjetoMochila(const string& objeto, vector<Pokemon>& equipo) {
         }
         return true;
     } else if (objeto.find("revive") != string::npos) {
+        bool hayDebilitado = false;
+        for (const auto& poke : equipo) {
+            if (!poke.vivo || poke.Vida == 0) {
+                hayDebilitado = true;
+                break;
+            }
+        }
+        if (!hayDebilitado) {
+            cout << "No hay ningun Pokemon debilitado para revivir.\n";
+            fueRevivirSinDebilitados = true;
+            return false;
+        }
         int idx = elegirPokemonObjetivo(equipo, true);
         if (idx == -1) return false;
         if (equipo[idx].vivo && equipo[idx].Vida > 0) {
@@ -169,22 +210,42 @@ inline bool usarObjetoMochila(const string& objeto, vector<Pokemon>& equipo) {
     return false;
 }
 
-// --- Opcion de mochila ---
 inline void abrirMochila(vector<Pokemon>& equipo) {
     vector<string> objetos = leerMochila("Mochila.txt");
-    int eleccion = mostrarMochila(objetos);
-    if (eleccion < 0 || eleccion >= (int)objetos.size()) {
-        cout << "No se uso ningun objeto.\n";
-        return;
+    while (true) {
+        int eleccion = mostrarMochila(objetos);
+        if (eleccion < 0 || eleccion >= (int)objetos.size()) {
+            cout << "No se uso ningun objeto.\n";
+            return;
+        }
+        bool fueRevivirSinDebilitados = false;
+        bool usado = usarObjetoMochila(objetos[eleccion], equipo, fueRevivirSinDebilitados);
+        if (fueRevivirSinDebilitados) {
+            char resp;
+            while (true) {
+                cout << "Quieres elegir otro objeto? (s/n): ";
+                cin >> resp;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                if (resp == 's' || resp == 'S') {
+                    break;
+                } else if (resp == 'n' || resp == 'N') {
+                    cout << "No se uso ningun objeto.\n";
+                    return;
+                } else {
+                    cout << "Opcion invalida. Escribe 's' o 'n'.\n";
+                }
+            }
+            continue;
+        }
+        if (usado) {
+            objetos.erase(objetos.begin() + eleccion);
+            guardarMochila("Mochila.txt", objetos);
+        }
+        cout << "Pulsa enter para continuar...";
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.get();
+        break;
     }
-    bool usado = usarObjetoMochila(objetos[eleccion], equipo);
-    if (usado) {
-        objetos.erase(objetos.begin() + eleccion);
-        guardarMochila("Mochila.txt", objetos);
-    }
-    cout << "Pulsa enter para continuar...";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cin.get();
 }
 
 inline void curarEquipo(vector<Pokemon>& equipo) {
@@ -195,33 +256,6 @@ inline void curarEquipo(vector<Pokemon>& equipo) {
     cout << "\nTodo tu equipo ha sido curado!" << endl;
 }
 
-// --- Estructuras ---
-struct TempJugador {
-    double incrementoVida = 1.5;
-    double incrementoAtaque = 1.8;
-
-    void subirStats(Pokemon& p) {
-        p.Vida = static_cast<int>(p.Vida * incrementoVida);
-        if (p.Vida > p.VidaMaxima) p.Vida = p.VidaMaxima;
-        for (auto& atk : p.Ataques) {
-            atk.danio = static_cast<int>(atk.danio * incrementoAtaque);
-        }
-    }
-};
-struct TempBot {
-    double incrementoVida = 1.1;
-    double incrementoAtaque = 1.3;
-
-    void subirStats(Pokemon& p) {
-        p.Vida = static_cast<int>(p.Vida * incrementoVida);
-        if (p.Vida > p.VidaMaxima) p.Vida = p.VidaMaxima;
-        for (auto& atk : p.Ataques) {
-            atk.danio = static_cast<int>(atk.danio * incrementoAtaque);
-        }
-    }
-};
-
-// Solo permite seleccionar Pokemon vivos con vida mayor a 0
 inline Pokemon seleccionarPokemonUsuario(vector<Pokemon>& pokemons) {
     cout << "\nSelecciona tu Pokemon:\n";
     vector<int> indicesValidos;
@@ -258,15 +292,18 @@ inline Pokemon seleccionarPokemonRandom(const vector<Pokemon>& pokemons) {
     return pokemons[idx];
 }
 
+// --- La batalla principal PvE ---
 inline void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemonsEnemigos) {
     crearMochilaSiNoExiste();
     srand(static_cast<unsigned>(time(0)));
 
-    TempJugador tempJugador;
-    TempBot tempBot;
+    float mejoraVidaJugador = 0.0f;
+    float mejoraDanioJugador = 0.0f;
+    float mejoraEnemigo = 0.0f;
+
+    vector<string> objetosIniciales = leerMochila("Mochila.txt");
 
     cout << "Empieza el torneo PvE infinito!\n";
-
     int ronda = 1;
 
     for (;!pokemonsUsuario.empty(); ronda++) {
@@ -279,7 +316,14 @@ inline void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemo
         }
         Pokemon enemigo = seleccionarPokemonRandom(pokemonsEnemigos);
 
-        cout << "Tu Pokemon: " << usuario.Nombre << " vs Enemigo: " << enemigo.Nombre << " " << colorTipo(enemigo.Tipo) << "\n";
+        // Aplica mejoras acumuladas
+        usuario.Vida += int(usuario.VidaMaxima * mejoraVidaJugador);
+        for (auto& atk : usuario.Ataques)
+            atk.danio += int(atk.danio * mejoraDanioJugador);
+
+        enemigo.Vida += int(enemigo.VidaMaxima * mejoraEnemigo);
+        for (auto& atk : enemigo.Ataques)
+            atk.danio += int(atk.danio * mejoraEnemigo);
 
         usuario.vivo = true;
         enemigo.vivo = true;
@@ -306,67 +350,74 @@ inline void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemo
 
             bool usuarioEsPrimero = usuario.Velocidad >= enemigo.Velocidad;
 
-            if (usuarioEsPrimero) {
-                cout << "\nTu Pokemon: " << usuario.Nombre << " (Vida: " << usuario.Vida << ")\n";
-                cout << "Enemigo: " << enemigo.Nombre << " (Vida: " << enemigo.Vida << ")\n";
+            for (int turno = 0; turno < 2; ++turno) {
+                Pokemon& atacante = (turno == 0) == usuarioEsPrimero ? usuario : enemigo;
+                Pokemon& defensor = (turno == 0) == usuarioEsPrimero ? enemigo : usuario;
 
-                cout << "Ataques:\n";
-                for (int i = 0; i < 4; ++i) {
-                    cout << i + 1 << ". " << usuario.Ataques[i].nombre << " (Dano: " << usuario.Ataques[i].danio
-                         << ", PP: " << usuario.Ataques[i].pp << ")\n";
+                int idxAtaque = 0;
+                if (&atacante == &usuario) {
+                    cout << "\nTu turno (" << atacante.Nombre << "):\n";
+                    for (int i = 0; i < 4; ++i)
+                        cout << i+1 << ". " << atacante.Ataques[i].nombre << " (Dano: " << atacante.Ataques[i].danio
+                             << ", PP: " << atacante.Ataques[i].pp
+                             << ", Precision: " << atacante.Ataques[i].precision << "%)\n";
+                    do {
+                        cout << "Selecciona ataque (1-4): ";
+                        cin >> idxAtaque;
+                    } while (idxAtaque < 1 || idxAtaque > 4 || atacante.Ataques[idxAtaque-1].pp <= 0);
+                    idxAtaque--;
+                } else {
+                    idxAtaque = rand() % 4;
+                    while (atacante.Ataques[idxAtaque].pp <= 0) idxAtaque = rand() % 4;
                 }
-                int ataqueUsuario;
-                do {
-                    cout << "Selecciona ataque (1-4): ";
-                    cin >> ataqueUsuario;
-                } while (ataqueUsuario < 1 || ataqueUsuario > 4 || usuario.Ataques[ataqueUsuario - 1].pp <= 0);
 
-                int danio = calcularDanioBase(usuario.Ataques[ataqueUsuario - 1].danio, enemigo.Defensa);
-                danio = static_cast<int>(danio * obtenerMultiplicador(usuario.Tipo, enemigo.Tipo));
+                Ataque& ataque = atacante.Ataques[idxAtaque];
+                ataque.pp--;
+
+                // Precision
+                if (!ataqueAcierta(ataque.precision)) {
+                    cout << atacante.Nombre << " fallo el ataque!\n";
+                    continue;
+                }
+
+                // Critico
+                bool critico = (rand() % 100) < 10;
+                int danio = calcularDanioBase(ataque.danio, defensor.Defensa);
+                float multTipo = obtenerMultiplicador(atacante.Tipo, defensor.Tipo);
+                danio = static_cast<int>(danio * multTipo);
+
+                if (critico) {
+                    danio *= 2;
+                    cout << "Golpe critico!\n";
+                }
                 if (danio < 1) danio = 1;
 
-                float multTipo = obtenerMultiplicador(usuario.Tipo, enemigo.Tipo);
                 if (multTipo > 1.0f) cout << "Es super efectivo!\n";
                 else if (multTipo < 1.0f && multTipo > 0.0f) cout << "No es muy efectivo...\n";
                 else if (multTipo == 0.0f) cout << "No afecta al rival!\n";
 
-                enemigo.Vida -= danio;
-                usuario.Ataques[ataqueUsuario - 1].pp--;
-                cout << usuario.Nombre << " uso " << usuario.Ataques[ataqueUsuario - 1].nombre << " causando " << danio << " de dano!\n";
+                defensor.Vida -= danio;
+                cout << atacante.Nombre << " uso " << ataque.nombre << " causando " << danio << " de dano!\n";
 
-                if (enemigo.Vida <= 0) {
-                    enemigo.vivo = false;
-                    enemigo.Vida = 0;
-                    cout << enemigo.Nombre << " fue debilitado. Ganaste esta batalla!\n";
+                // Efectos de estado aleatorios (10% veneno, 15% quemadura)
+                if (defensor.efecto == Ninguno) {
+                    int roll = rand() % 100;
+                    if (roll < 10) {
+                        defensor.efecto = Veneno;
+                        defensor.RondasConEfecto = 3;
+                        cout << defensor.Nombre << " fue envenenado!\n";
+                    } else if (roll < 25) {
+                        defensor.efecto = Quemadura;
+                        defensor.RondasConEfecto = 3;
+                        cout << defensor.Nombre << " fue quemado!\n";
+                    }
+                }
+
+                if (defensor.Vida <= 0) {
+                    defensor.vivo = false; defensor.Vida = 0;
+                    if (&defensor == &usuario) usuarioSobrevive = false;
                     break;
                 }
-            }
-
-            int ataqueEnemigo = rand() % 4;
-            while (enemigo.Ataques[ataqueEnemigo].pp <= 0) {
-                ataqueEnemigo = rand() % 4;
-            }
-
-            int danio = calcularDanioBase(enemigo.Ataques[ataqueEnemigo].danio, usuario.Defensa);
-            danio = static_cast<int>(danio * obtenerMultiplicador(enemigo.Tipo, usuario.Tipo));
-            if (danio < 1) danio = 1;
-
-            float multTipo = obtenerMultiplicador(enemigo.Tipo, usuario.Tipo);
-            if (multTipo > 1.0f) cout << "Es super efectivo!\n";
-            else if (multTipo < 1.0f && multTipo > 0.0f) cout << "No es muy efectivo...\n";
-            else if (multTipo == 0.0f) cout << "No afecta al rival!\n";
-
-            usuario.Vida -= danio;
-            enemigo.Ataques[ataqueEnemigo].pp--;
-            cout << enemigo.Nombre << " uso " << enemigo.Ataques[ataqueEnemigo].nombre << " causando " << danio << " de dano!\n";
-
-            if (usuario.Vida <= 0) {
-                usuario.vivo = false;
-                usuario.Vida = 0;
-                cout << usuario.Nombre << " fue debilitado. ";
-                usuarioSobrevive = false;
-                cout << "Perdiste este combate!\n";
-                break;
             }
         }
 
@@ -375,56 +426,68 @@ inline void batallaPvE(vector<Pokemon>& pokemonsUsuario, vector<Pokemon>& pokemo
             if (poke.Nombre == usuario.Nombre) {
                 poke.Vida = usuario.Vida;
                 poke.vivo = usuario.vivo;
+                poke.Ataques[0] = usuario.Ataques[0];
+                poke.Ataques[1] = usuario.Ataques[1];
+                poke.Ataques[2] = usuario.Ataques[2];
+                poke.Ataques[3] = usuario.Ataques[3];
             }
         }
 
+        // Mochila: reparto de objetos segun ronda y resultado
+        vector<string> mochila = leerMochila("Mochila.txt");
+        darObjetosPorRonda(mochila, ronda, usuarioSobrevive);
+
+        // MEJORAS: Elegir tras ganar
         if (usuarioSobrevive) {
-            tempJugador.subirStats(usuario);
-            cout << usuario.Nombre << " ahora tiene Vida: " << usuario.Vida << "\n";
-            for (auto& poke : pokemonsUsuario) {
-                if (poke.Nombre == usuario.Nombre) {
-                    poke.Vida = usuario.Vida;
-                    poke.vivo = usuario.vivo;
-                    poke.Ataques[0] = usuario.Ataques[0];
-                    poke.Ataques[1] = usuario.Ataques[1];
-                    poke.Ataques[2] = usuario.Ataques[2];
-                    poke.Ataques[3] = usuario.Ataques[3];
-                }
-            }
-        } else {
-            int vivos = 0;
-            for (auto& poke : pokemonsUsuario)
-                if (poke.vivo && poke.Vida > 0) vivos++;
-            cout << "Te quedan " << vivos << " Pokemon para seguir el torneo.\n";
+            char eleccion;
+            do {
+                cout << "Que quieres mejorar? (v: vida, d: dano): ";
+                cin >> eleccion;
+            } while (eleccion != 'v' && eleccion != 'd');
+            if (eleccion == 'v') mejoraVidaJugador += 0.2f;
+            else mejoraDanioJugador += 0.2f;
+            mejoraEnemigo += 0.3f;
         }
 
-        for (auto& e : pokemonsEnemigos) {
-            tempBot.subirStats(e);
+        // Menu de opciones tras cada combate
+        bool salir = false;
+        do {
+            cout << "\nElige una opcion:\n";
+            cout << "1. Ver mochila\n";
+            cout << "2. Siguiente batalla\n";
+            cout << "3. Salir del torneo\n";
+            int opcion;
+            cin >> opcion;
+            if (opcion == 1) abrirMochila(pokemonsUsuario);
+            else if (opcion == 2) break;
+            else if (opcion == 3) { salir = true; break; }
+        } while (true);
+        if (salir) break;
+
+        // Restaurar objetos cada 10 rondas
+        if (ronda % 10 == 0) {
+            cout << "Tus objetos han sido restaurados!\n";
+            guardarMochila("Mochila.txt", objetosIniciales);
         }
 
+        // Curar equipo cada 4 rondas
+        if (ronda % 4 == 0) curarEquipo(pokemonsUsuario);
+
+        // Chequeo de fin de equipo
         bool hayVivos = false;
         for (auto& poke : pokemonsUsuario)
             if (poke.vivo && poke.Vida > 0) hayVivos = true;
-
         if (!hayVivos) {
             cout << "Todos tus Pokemon han sido debilitados! Fin del torneo.\n";
             break;
         }
-
-        if (ronda % 4 == 0) {
-            curarEquipo(pokemonsUsuario);
-        }
-
-        cout << "\nQuieres abrir la mochila? (s/n): ";
-        char opcionMochila;
-        cin >> opcionMochila;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        if (opcionMochila == 's' || opcionMochila == 'S') {
-            abrirMochila(pokemonsUsuario);
-        }
-
-        cout << "Preparate para la proxima ronda!\n";
     }
+
+    // Registro de ronda maxima
+    ofstream rec("records.txt", ios::app);
+    rec << "Rondas alcanzadas: " << (ronda - 1) << endl;
+    rec.close();
+    cout << "Fin del torneo PvE! Alcanzaste la ronda #" << (ronda - 1) << endl;
 }
 
 #endif

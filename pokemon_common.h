@@ -10,8 +10,6 @@
 #include <algorithm>
 #include <cctype>
 #include <limits>
-#include <cstdlib>
-#include <ctime>
 
 using namespace std;
 
@@ -20,6 +18,7 @@ struct Ataque
     string nombre;
     int danio;
     int pp;
+    int precision = 100;
 };
 
 enum EfectoEstado
@@ -35,14 +34,13 @@ struct Pokemon
     string Tipo;
     int Vida;
     int VidaMaxima;
-    int Puntos;     
+    int Puntos;
     int Velocidad;
     int Defensa;
     Ataque Ataques[4];
     bool vivo = true;
     EfectoEstado efecto = Ninguno;
     int RondasConEfecto = 0;
-    int ContadorGolpes = 0;
 };
 
 map<pair<string, string>, float> TablaTipos = {
@@ -143,12 +141,12 @@ inline std::string colorTipo(const std::string& tipo) {
     if (tipo == "Electrico") return "\033[33m" + tipo + "\033[0m";
     if (tipo == "Hielo") return "\033[36m" + tipo + "\033[0m";
     if (tipo == "Lucha") return "\033[91m" + tipo + "\033[0m";
-    if (tipo == "Veneno") return "\033[32m" + tipo + "\033[0m";       
+    if (tipo == "Veneno") return "\033[32m" + tipo + "\033[0m";
     if (tipo == "Tierra") return "\033[33m" + tipo + "\033[0m";
     if (tipo == "Volador") return "\033[94m" + tipo + "\033[0m";
     if (tipo == "Psiquico") return "\033[95m" + tipo + "\033[0m";
     if (tipo == "Bicho") return "\033[92m" + tipo + "\033[0m";
-    if (tipo == "Roca") return "\033[33m" + tipo + "\033[0m";    
+    if (tipo == "Roca") return "\033[33m" + tipo + "\033[0m";
     if (tipo == "Fantasma") return "\033[95m" + tipo + "\033[0m";
     if (tipo == "Dragon") return "\033[34m" + tipo + "\033[0m";
     if (tipo == "Normal") return "\033[37m" + tipo + "\033[0m";
@@ -158,6 +156,10 @@ inline std::string colorTipo(const std::string& tipo) {
 inline int calcularDanioBase(int danioBase, int defensa) {
     int danioFinal = danioBase - (defensa / 4);
     return (danioFinal < 1) ? 1 : danioFinal;
+}
+
+inline bool ataqueAcierta(int precision) {
+    return (rand() % 100) < precision;
 }
 
 inline vector<Pokemon> seleccionarPokemonsUsuario(vector<Pokemon>& pokemons, int cantidad) {
@@ -212,34 +214,6 @@ inline void aplicarEfectos(Pokemon &p)
         {
             p.efecto = Ninguno;
         }
-    }
-}
-
-inline void aplicarDanio(Pokemon &atacante, Pokemon &defensor, Ataque ataque)
-{
-    float mult = obtenerMultiplicador(atacante.Tipo, defensor.Tipo);
-    int danioFinal = calcularDanioBase(ataque.danio, defensor.Defensa);
-    danioFinal = static_cast<int>(danioFinal * mult);
-    if (danioFinal < 1) danioFinal = 1;
-    defensor.Vida -= danioFinal;
-
-    cout << atacante.Nombre << " usa " << ataque.nombre << " e inflige " << danioFinal << " de dano a " << defensor.Nombre << "!\n";
-
-    atacante.ContadorGolpes++;
-
-    if (atacante.Tipo == "Fuego" && atacante.ContadorGolpes == 4 && defensor.efecto == Ninguno)
-    {
-        defensor.efecto = Quemadura;
-        defensor.RondasConEfecto = 3;
-        cout << defensor.Nombre << " ha sido quemado!\n";
-        atacante.ContadorGolpes = 0;
-    }
-    else if (atacante.Tipo == "Veneno" && atacante.ContadorGolpes == 6 && defensor.efecto == Ninguno)
-    {
-        defensor.efecto = Veneno;
-        defensor.RondasConEfecto = 2;
-        cout << defensor.Nombre << " ha sido envenenado!\n";
-        atacante.ContadorGolpes = 0;
     }
 }
 
